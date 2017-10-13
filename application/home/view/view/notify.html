@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>
+        站内通知
+        | 18ico-区块链项目ICO服务平台
+    </title>
+    <meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="18ico是一家针对数字货币、区块链领域的ICO融资服务平台，由一支有着丰富数字货币、区块链行业经验的团队成立。我们致力于为广大数字货币、区块链投资者提供一个安全、诚信、公平、透明的ICO融资服务平台。">
+    <meta name="keywords" content="18ico区块链,区块链投资,区块链,区块链技术,区块链应用,区块链金融,区块链概念股,区块链原理,数字货币,数字资产">
+    <meta name="sogou_site_verification" content="C8OJXgS1E7"/>
+    <link rel="stylesheet" href="__CSS__/app-892a367653.css">
+</head>
+
+<body>
+{include file='view/header' /}
+<div id="user_content">
+    {include file="view/user-header" /}
+    <div class="user-container">
+        <div class="user-body">
+            {include file="view/user-menu" /}
+            <div class="user-body-right">
+                <div id="notify_wrap">
+                    <div class="notify-hd">
+                        <span class="msg-time">主题</span>
+                        <span class="msg-time">时间</span>
+                        <span class="msg-time">简略</span>
+                        <span class="msg-time">查看</span>
+                    </div>
+                    <div class="notify-bd">
+                        <ul class="msg-list">
+                        {if !empty($notice)}
+                        {foreach $notice as $v}
+<li>
+    <span class="msg-time">{$v.title}</span>
+    <span class="msg-time">{$v.created_at)|date('Y-m-d H:i',}</span>
+    <span class="msg-time">{$v.remark}</span>
+    <span class="msg-time"><a onClick='see("{$v.id}")'>点击查看</a></span>
+    <div style="display: none" id="pp{$v.id}">{$v.content}</div>
+</li>
+                        {/foreach}
+                        {/if}
+                        </ul>
+                        <div id="notify-footer">
+                            <div class="notify-page-info">
+                                <span>{$num}条记录&nbsp;&nbsp;1/1页，</span>
+                            </div>
+                            <div id="notify_page">
+                                <div id="notify_pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="view/footer" /}
+<div class="toolbar">
+    <a href="javascript:" id="back_to_top" title="返回顶部">
+        <svg height="30" width="30" viewBox="0 0 30 30"><path d="M30 26c0 2.2-1.8 4-4 4H4c-2.2 0-4-1.8-4-4V4c0-2.2 1.8-4 4-4h22c2.2 0 4 1.8 4 4v22z" opacity=".3"></path><path fill="#FFF" d="M25.002 18.463l-1.134-1.134-1.321-1.321L15 8.461l-7.438 7.438-1.227 1.226-1.338 1.338c-.778.777-.868 1.96-.2 2.628s1.85.577 2.628-.2l2.172-2.172L15 13.317l2.691 2.691 3.496 3.496 1.387 1.387c.777.777 1.96.868 2.628.2s.577-1.851-.2-2.628z"></path></svg>
+    </a>
+</div>
+<script src="/static/admin/layui/layui.js"></script>
+<script src="http://18ico.ewtouch.com/static/admin/js/plugins/layer/skin/layer.css"></script>
+<script type="text/javascript">
+    function see(id){
+        layer.open({
+                type: 1,
+                shade: false,
+                area: ['400px', '500px'], //宽高
+                title: '通知详情', //不显示标题
+                content: $('#pp'+id),
+            });
+        // layer.msg($('#pp'+id).text());
+        $(".layui-layer-close1").text('X')
+    }
+</script>
+<!-- <script src="__JS__/vendor-140c67b313.bundle.js"></script> -->
+<!-- <script src="__JS__/app-d2b0299975.bundle.js"></script> -->
+<!-- <script src="__JS__/header-ee96b9a909.bundle.js"></script> -->
+<script src="__JS__/user-4fdf20982d.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>
+        个人信息| ico365-区块链项目ICO服务平台
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="18ico是一家针对数字货币、区块链领域的ICO融资服务平台，由一支有着丰富数字货币、区块链行业经验的团队成立。我们致力于为广大数字货币、区块链投资者提供一个安全、诚信、公平、透明的ICO融资服务平台。">
+    <meta name="keywords" content="18ico区块链,区块链投资,区块链,区块链技术,区块链应用,区块链金融,区块链概念股,区块链原理,数字货币,数字资产">
+    <meta name="sogou_site_verification" content="C8OJXgS1E7"/>
+    <link rel="stylesheet" href="__CSS__/app-892a367653.css">
+    <link rel="stylesheet" type="text/css" href="/static/admin/layui/css/layui.css">
+    <style type="text/css">
+        .fly_ipt{
+            display: block;
+            width: 15px !important;
+            height: 15px !important;
+            margin-top: 11px !important;
+            margin-left: 10px !important;
+            float: left;
+        }
+        .gender{
+            float: left;
+        }
+        .fly_td{
+            
+        }
+        #user_content .user-body-right .form-group label{
+            float: left ;
+        }
+        #user_content .user-body-right .form-group{
+            overflow: hidden;
+        }
+        .fly_lab{
+            width: auto !important;
+            margin-left: 10px !important;
+        }
+        .country-select select{
+            border: 1px solid #d1d1d1;
+            color: #0b0b0b;
+            font-size: 14px;
+            height: 40px;
+            line-height: 40px;
+            width: 307px;
+            padding: 3px 15px;
+            outline: 0;
+            vertical-align: middle;
+
+        }
+        #header-iframe {
+            width: 100%;
+            height: 386px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+{include file='view/header' /}
+<div id="user_content">
+    <iframe id="header-iframe" src="/home/index/rules?v=user-header_one" scrolling="no" seamless>
+        
+    </iframe>
+    <div class="user-container">
+        <div class="user-body">
+            {include file="view/user-menu" /}
+            <div class="user-body-right">
+                <div class="home-page-right" id="home_wrap">
+                    <div>
+                        <form action="#" id="user_info_form">
+                            <div class="form-group">
+                                <label for="username">用户名：</label>
+                                <span class="txt-hide" id="username">{$user.phone}</span>
+                            </div>
+                            <div class="form-group email-home">
+                                <label for="email">邮箱：</label>
+                                <input type="text" name="email" id="email" value="{$user.email}">
+                                <button type="button" class="send-email-code" id="getEmailCode">发送验证邮件</button>
+                            </div>
+                            <div class="form-group email-verify">
+                                <label for="email_verify">邮箱验证码：</label>
+                                <input type="text" name="email_code" id="email_verify">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">昵称：</label>
+                                <input type="text" name="name" id="name" value="{$user.nickname}">
+                            </div>
+                            {if($user.type==3)}
+                            <div class="form-group">
+                                <label >实名认证：</label>
+                                <span style="color: #24d86a;">已认证</span>
+                            </div>
+                            {else}
+                            <div class="form-group">
+                                <label for="identity">实名认证：</label>
+                                <span id="identity">您还没身份认证，请 <a href="identity.html" class="goto-auth">立即认证</a></span>
+                            </div>
+                            {/if}
+                            
+                           <!--  <div class="form-group">
+                               <label for="phone">手机号码：</label>
+                               <input type="text" name="phone" readonly id="phone" value="{$user.phone}">
+                               <button type="button" class="send-phone-code">发送手机验证码</button>
+                           </div>
+                           <div class="form-group phone-verify">
+                               <label for="phone_verify">手机验证码：</label>
+                               <input type="text" name="code" id="phone_verify">
+                           </div> -->
+                            <div class="form-group">
+                                <label for="gender" class="fly_td">性别：</label>
+                                <span class="gender">
+                                    <input type="radio" name="sex" class="fly_ipt" id="nan" {if $user.sex == 1}checked{/if}><label for="nan" class="fly_lab">男</label>
+                                    <input type="radio" name="sex" class="fly_ipt" id="nv" {if $user.sex != 1}checked{/if}><label for="nv" class="fly_lab">女</label>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">所在地区：</label>
+                                <div class="country-select">
+                                   <select id="state" name="state">
+                                        {if !empty($user.state)}<option value="{$user.state}" selected>{$user.state}</option>{/if}
+                                        <option value="">请选择国家</option>
+                                        <option value="中国">中国</option>
+                                        <option value="英国">英国</option>
+                                        <option value="美国">美国</option>
+                                        <option value="俄罗斯">俄罗斯</option>
+                                   </select>
+                                   
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="detail_address">详细地址：</label>
+                                <input type="text" name="detail_address" id="detail_address" value="{$user.detail_address}">
+                            </div>
+                            <div class="form-group">
+                                <label for="company_address">所在公司：</label>
+                                <input type="text" name="user_company" id="company" value="{$user.company}">
+                            </div>
+                            <div class="form-group">
+                                <label for="describe">个人简介：</label>
+                                <textarea name="describe" id="remark" maxlength="100" cols="30" rows="10">{$user.remark}</textarea>
+                            </div>
+                        </form>
+                        <div class="log-info">
+                            <div class="form-group">
+                                <label for="">最近登录：</label>
+                                <a class="lasttime">{$user.updated_at}</a>
+                            </div>
+                            <div class="form-group">
+                                <label for="">注册时间：</label>
+                                <a class="createtime">{$user.created_at}</a>
+                            </div>
+                        </div>
+                        <div class="btn-group">
+                            <button class="save-info-btn" type="button">保存</button>
+                        </div>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="{if empty($user.headimg)}__IMG__/default-avatar.png{else}{$user.headimg}{/if}" alt="" class="avatar-pic">
+                        <a href="javascript:upload_file();" class="edit-avatar">修改头像</a>
+                        <input type="file" id="upload_file" name="files" style="display:none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="view/footer" /} <div class="toolbar">
+    <a href="javascript:" id="back_to_top" title="返回顶部">
+        <svg height="30" width="30" viewBox="0 0 30 30">
+
+            <path d="M30 26c0 2.2-1.8 4-4 4H4c-2.2 0-4-1.8-4-4V4c0-2.2 1.8-4 4-4h22c2.2 0 4 1.8 4 4v22z" opacity=".3"></path><path fill="#FFF" d="M25.002 18.463l-1.134-1.134-1.321-1.321L15 8.461l-7.438 7.438-1.227 1.226-1.338 1.338c-.778.777-.868 1.96-.2 2.628s1.85.577 2.628-.2l2.172-2.172L15 13.317l2.691 2.691 3.496 3.496 1.387 1.387c.777.777 1.96.868 2.628.2s.577-1.851-.2-2.628z"></path></svg>
+    </a>
+</div>
+<!-- <script src="__JS__/vendor-140c67b313.bundle.js"></script>
+<script src="__JS__/app-d2b0299975.bundle.js"></script>
+<script src="__JS__/header-ee96b9a909.bundle.js"></script>-->
+<!-- <script src="__JS__/user-4fdf20982d.bundle.js"></script>  -->
+<script src="/static/admin/layui/layui.js"></script>
+</body>
+</html>
+<script>
+    //发送邮件
+    $('#getEmailCode').on('click',function(){
+        let email = $('#email').val();
+        if(email == null){
+            return false;
+        }
+        let reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"); //邮箱正则表达式
+        if(!reg.test(email)){
+            alert('邮箱格式错误');
+            return false;
+        }
+        $.ajax({
+            url : '/home/user/to_email',
+            type : 'post',
+            data : {
+                email:email,
+            },
+            success : function(res){
+                alert(res.msg);
+            }
+        });
+    });
+
+    //保存信息
+    $('.save-info-btn').on('click',function(){
+        let email = $('#email').val();
+        let email_code = $('#email_verify').val();
+        let nickname = $('#name').val();
+        let phone = $('#phone').val();
+        let phone_code = $('#phone_verify').val();
+        let detail_address = $('#detail_address').val();
+        let company = $('#company').val();
+        let remark = $('#remark').val();
+        let sex_pd = $('#nan')[0].checked;
+        let sex = '1';
+        if(sex_pd == true){
+            sex = '1';
+        }else{
+            sex = '2';
+        }
+        let state = $('#state').val();
+        $.ajax({
+            url : '/home/user/userEdit',
+            type : 'post',
+            data : {
+                email : email,
+                email_code : email_code,
+                nickname : nickname,
+                phone : phone,
+                phone_code : phone_code,
+                detail_address : detail_address,
+                company : company,
+                remark : remark,
+                sex : sex,
+                state : state,
+            },
+            success : function (res){
+                alert(res.msg);
+                location.reload();
+            }
+        })
+    })
+
+    //头像修改
+    function upload_file(){
+        $('#upload_file').click();
+    }
+
+    layui.use('upload', function(){
+        var upload = layui.upload;
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#upload_file' //绑定元素
+            ,url: '/admin/file/upload' //上传接口
+            ,done: function(res){
+                $.ajax({
+                    url : '/home/user/headimgEdit',
+                    type : 'post',
+                    data : {
+                        headimg : res.data,
+                    },
+                    success : function (req){
+                        $('.avatar-pic').attr('src',res.data);
+                        $('#headimg').attr('src',res.data);     
+                    }
+                });
+            }
+            ,error: function(){
+          //请求异常回调
+            }
+        });
+    });
+</script>
+
+<script>
+
+</script>

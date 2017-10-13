@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>
+        我关注的项目
+        | 18ico-区块链项目ICO服务平台
+    </title>
+    <meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="18ico是一家针对数字货币、区块链领域的ICO融资服务平台，由一支有着丰富数字货币、区块链行业经验的团队成立。我们致力于为广大数字货币、区块链投资者提供一个安全、诚信、公平、透明的ICO融资服务平台。">
+    <meta name="keywords" content="18ico区块链,区块链投资,区块链,区块链技术,区块链应用,区块链金融,区块链概念股,区块链原理,数字货币,数字资产">
+    <meta name="sogou_site_verification" content="C8OJXgS1E7"/>
+    <link rel="stylesheet" href="__CSS__/app-892a367653.css">
+</head>
+<body>
+{include file='view/header' /}
+<div id="user_content">
+    {include file='view/user-header' /}
+    <div class="user-container">
+        <div class="user-body">
+            {include file='view/user-menu' /}
+            <div class="user-body-right">
+                <div id="favorite_wrap">
+                    <div class="favorite-header">
+                        <h3>我关注的项目</h3>
+                        <span class="header-right">还有更多的项目等着您来关注 <!-- <a href="/items" target="_blank" class="contact-service">查看更多</a> --></span>
+                    </div>
+                    <div class="favorite-body">
+                        <!-- <p class="text-center empty-favorite">暂无关注项目哦~</p> -->
+                        {foreach $data as $vo}
+                        <div class="section" style="height: 386px">
+                            <div class="block-left">
+                                <a href="/home/project/finish/id/{$vo.id}" class="pro-pic"><img src="{$vo.l_banner}" alt=""></a>
+                            </div>
+                            <div class="block-right">
+                                <a href="javascript:;" class="del-state" data-item="{$vo.id}" style="font-size: 18px;">X</a>
+                                <div class="block-title">
+                                <h4><a href="javascript:;">{$vo.name}</a></h4>
+                                <p>{$vo.remark}</p>
+                                <div class="raise-funds">
+                                    <div class="raise-money">
+                                    <a class="raise-already btc-font-family raise-completed">ETH&nbsp;{$vo.eth_ed?:0}</a><span class="raise-text"> 已筹金额</span>
+                                    </div>
+                                    <div class="raise-progress">
+                                    <div class="meter">
+                                    <span class="current-percent full-span raise-bg  " data-number="100" style="width:100%"></span>
+                                    </div>
+
+                                    <a class="progress-percent raise-completed ">{$vo.naa}%</a>
+                                    </div>
+                                </div>
+                                <div class="raise-funds">
+                                    <div class="raise-money">
+                                    <a class="raise-already btc-font-family raise-completed">BTC&nbsp;{$vo.btc_ed?:0}</a><span class="raise-text"> 已筹金额</span>
+                                    </div>
+                                    <div class="raise-progress">
+                                    <div class="meter">
+                                    <span class="current-percent full-span raise-bg  " data-number="100" style="width:100%"></span>
+                                    </div>
+
+                                    <a class="progress-percent raise-completed ">{$vo.nbb}%</a>                            
+                                    </div>
+                                </div>
+                                <div class="raise-funds">
+                                    <div class="raise-money">
+                                    <a class="raise-already btc-font-family raise-completed">LTC&nbsp;{$vo.ltc_ed?:0}</a><span class="raise-text"> 已筹金额</span>
+                                    </div>
+                                    <div class="raise-progress">
+                                    <div class="meter">
+                                    <span class="current-percent full-span raise-bg  " data-number="100" style="width:100%"></span>
+                                    </div>
+                                    <a class="progress-percent raise-completed ">{$vo.ncc}%</a>
+                                    </div>
+                                </div>
+                                <ul class="raise-info clearfix">
+                                    <li class="right-bar">
+                                    <a class="raise-info-val">{$vo.eth_target} ETH</a>
+                                    <span>目标金额</span>
+                                    </li>
+                                    <li class="right-bar">
+                                    <a class="raise-info-val">{$vo.btc_target} BTC</a>
+                                    <span>目标金额</span>
+                                    </li>
+                                    <li class="right-bar">
+                                    <a class="raise-info-val">{$vo.ltc_target} LTC</a>
+                                    <span>目标金额</span>
+                                    </li>
+                                    <li class="right-bar pl20">
+                                    <a class="raise-info-val">{$vo.ico_days<0?0:$vo.ico_days}</a>
+                                    <span>剩余天数</span>
+                                    </li>
+<!--                                     <li class="pl20">
+                                    <a class="raise-info-val">2,955</a>
+                                    <span>支持者</span>
+                                    </li> -->
+                                </ul>
+                                    <div class="raise-originator clearfix">
+                                    <div class="originator-info">&nbsp;
+                                    </div>
+                                    <div class="investment-btn">
+                                    <a href="javascript:;">
+                                    <button data-id="{$vo.id}" onclick="javascript:location.href='/home/project/finish/id/{$vo.id}'" class="myZC">我要支持<svg width="6px" height="9px" viewBox="0 0 9 14">
+
+                                    <path fill="currentColor" d="M0 14V0l9 7z"></path></svg>
+                                    </button>
+                                    </a>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/foreach}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__JS__/jquery2.0.3.min.js"></script>
+<script>
+    $('.del-state').click(function(){
+        var own = $(this);
+        var id = own.attr('data-item');
+    if ( confirm('确定取消关注吗?') ) {
+        $.ajax({
+            url:"removeAttention",
+            type:'POST',
+            data:{id:id},
+            success:function(data){
+                if (data.code == 1) {
+                    own.parent().parent().remove();
+                }
+            }
+        });              
+    }
+    });
+</script>
+{include file='view/footer' /}
+<div class="toolbar">
+    <a href="javascript:" id="back_to_top" title="返回顶部">
+        <svg height="30" width="30" viewBox="0 0 30 30"><path d="M30 26c0 2.2-1.8 4-4 4H4c-2.2 0-4-1.8-4-4V4c0-2.2 1.8-4 4-4h22c2.2 0 4 1.8 4 4v22z" opacity=".3"></path><path fill="#FFF" d="M25.002 18.463l-1.134-1.134-1.321-1.321L15 8.461l-7.438 7.438-1.227 1.226-1.338 1.338c-.778.777-.868 1.96-.2 2.628s1.85.577 2.628-.2l2.172-2.172L15 13.317l2.691 2.691 3.496 3.496 1.387 1.387c.777.777 1.96.868 2.628.2s.577-1.851-.2-2.628z"></path></svg>
+    </a>
+</div>
+<script src="__JS__/vendor-140c67b313.bundle.js"></script>
+<script src="__JS__/app-d2b0299975.bundle.js"></script>
+<script src="__JS__/header-ee96b9a909.bundle.js"></script>
+<script src="__JS__/user-4fdf20982d.bundle.js"></script>
+</body>
+</html>
+<script>
+    const myconfirm = layer.confirm;
+    layer.confirm = function(str){
+        if(str == '您确定要取消关注？'){
+            return false;
+        }else{
+            myconfirm(str);
+        }
+    }
+</script>

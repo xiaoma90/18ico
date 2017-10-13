@@ -1,0 +1,58 @@
+<script>
+    const myalert = window.alert;
+    window.alert = function(str){
+        if(str == '获取国家列表出错啦！'){
+            return false;
+        }else{
+            myalert(str);
+        }  
+    }
+
+</script>
+<header>
+    <div id="header" class="no-fixed">
+        <div class="header_info">
+            <div class="header_info_left">
+                <span>BTC/CNY:<span class="green-span"><?php echo config('market')['btc'];?></span></span>
+                <span>ETH/CNY:<span class="green-span"><?php echo config('market')['eth'];?></span></span>
+            </div>
+            <div class="header_info_right">
+                {if empty(session('home_user'))}
+                <a href="/home/project/launch" class="send-ico"></a><!--发起项目 -->
+                <a href="/home/login/login">登录</a>
+                <a href="/home/login/register">注册</a>
+                <a class="country_select locale-lang" data-lang="zh-CN"><img src="__IMG__/chinese_version.png" /></a>
+                <a class="country_select locale-lang" data-lang="en"><img src="__IMG__/america_version.png" /></a>
+                {else}
+                <a href="/home/project/launch" class="send-ico"></a>
+                <a href="/home/user/index"><span class="user-info"><img src="__IMG__/user.png" /><?php echo session('home_user')['phone'];?></span></a>
+                <a href="/home/login/login_end">注销</a>
+                <a class="country_select locale-lang" data-lang="zh-CN"><img src="__IMG__/chinese_version.png" /></a>
+                <a class="country_select locale-lang" data-lang="en"><img src="__IMG__/america_version.png" /></a>
+                {/if}
+            </div>
+        </div>
+        <ul id="nav_list">
+            <li> <a href="/home/index/index" class="" data-hover="首页"> 首页 </a> </li>
+            <li> <a href="/home/index/items" class="" data-hover="ICO项目"> ICO项目 </a> </li>
+            <!-- <li> <a href="/home/index/projects" class="" data-hover="链SHOW"> 链SHOW </a> </li> -->
+            <li> <a href="/home/news/index" class="" data-hover="ICO新闻"> ICO新闻 </a> </li>
+            <li> <a href="/home/index/help" class="" data-hover="帮助中心"> 帮助中心 </a> </li>
+            <div id="line"></div>
+        </ul>
+        <div id="logo">
+            <a href="/home/index/index">
+                <img src="/static/home/images/logo.png" alt="logo图"/>
+            </a>
+            <span class="describe-span-divide">|</span>
+            <span class="describe-span">中国第一ICO专业平台</span>
+        </div>
+    </div>
+</header>
+<script src="__JS__/jquery.js"></script>
+<style>
+    #logo a {
+        padding: 0px 20px 0;
+        margin: 0 -20px 0 40px;
+    }
+</style>

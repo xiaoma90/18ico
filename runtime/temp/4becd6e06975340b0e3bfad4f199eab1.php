@@ -1,0 +1,190 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:83:"/www/wwwroot/18ico.ewtouch.com/public/../application/home/view/view/helpCenter.html";i:1504918670;s:82:"/www/wwwroot/18ico.ewtouch.com/public/../application/home/view/view/headertwo.html";i:1504837739;}*/ ?>
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <!-- v12657 -->
+    <title>帮助中心</title>
+    <meta name="csrf-param" content="authenticity_token"/>
+    <meta name="csrf-token" content="SuOR7Lza1D5Uw9sV9WFisyq/PU+hrwDTPs5moFiGk1MPfM9PyRi7PN/kfFmpjOHdPtf76z2Cp4EyOQ+GegN1kw=="/>
+    <link rel="canonical" href="https://18ico.zendesk.com/hc/zh-cn"/>
+    <link rel="alternate" hreflang="en" href="https://18ico.zendesk.com/hc/en-us"/>
+    <link rel="alternate" hreflang="zh" href="https://18ico.zendesk.com/hc/zh-cn"/>
+    <!-- Entypo pictograms by Daniel Bruce — www.entypo.com -->
+    <link rel="stylesheet" media="all" href="__CSS__/help1.css" id="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="__CSS__/help2.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="__IMG__/sVb00HtCeEN6BSWx06ealQ-CgpEMlj90UqAOCAuAABH-Ky3X3s603.jpg"/>
+    <!--[if lt IE 9]>
+    <script>
+        //Enable HTML5 elements for <IE9
+        'abbr article aside audio bdi canvas data datalist details dialog \
+        figcaption figure footer header hgroup main mark meter nav output \
+        progress section summary template time video'.replace(/\w+/g, function (n) {
+            document.createElement(n)
+        });
+    </script>
+    <![endif]-->
+    <script src="//p14.zdassets.com/hc/assets/jquery.js"></script>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <script type="text/javascript" src="__JS__/scriptb.js"></script>
+</head>
+<body class="">
+
+<header class="header">
+    <div class="logo">
+        <a href="index.html" alt="18ICO">
+           <img src="/static/home/images/logo.png" alt="">
+        </a>
+    </div>
+   <!--  <div class="nav-wrapper">
+       <span class="icon-menu"></span>
+       <nav class="user-nav" id="user-nav">
+           <a class="submit-a-request" href="/home/login/login">提交请求</a>
+       </nav>
+       <a class="login" href="/home/login/login">登录</a>
+   </div> -->
+</header>
+<main role="main">
+    <section class="section hero">
+        <div class="hero-inner">
+            <!-- <form role="search" class="search search-full" data-search="" data-instant="true" autocomplete="off" action="/hc/zh-cn/search" accept-charset="UTF-8" method="get">
+                <input name="utf8" type="hidden" value="&#x2713;"/><input type="search" name="query" id="query" placeholder="搜索" autocomplete="off" aria-label="搜索"/>
+            </form> -->
+        </div>
+    </section>
+    <div class="container">
+        <section class="section knowledge-base">
+            <section class="categories blocks">
+                <ul class="blocks-list">
+                    <li class="blocks-item">
+                        <a href='/home/index/notice' class="blocks-item-link">
+                            <h4 class="blocks-item-title">公告</h4>
+                            <p class="blocks-item-description"></p>
+                        </a>
+                    </li>
+                    <li class="blocks-item">
+                        <a href='/home/index/aboutUs' class="blocks-item-link">
+                            <h4 class="blocks-item-title">关于我们</h4>
+                            <p class="blocks-item-description"></p>
+                        </a>
+                    </li>
+                    <li class="blocks-item">
+                        <a href='/home/index/useHelp' class="blocks-item-link">
+                            <h4 class="blocks-item-title">使用帮助</h4>
+                            <p class="blocks-item-description"></p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section class="section activity">
+            <div class="recent-activity"><h2 class="recent-activity-header">最近的活动</h2>
+                <ul class="recent-activity-list" style="">
+                <?php foreach($notice as $v): ?>
+                    <li class="recent-activity-item" data-recent-activity-action="article_comment_added">
+                        <a class="recent-activity-item-parent" href="notice_yw?t=<?php echo $v['type']; ?>"><?php echo $v['types']; ?></a>
+                        <a class="recent-activity-item-link" href="help_c?d=<?php echo $v['id']; ?>"><?php echo $v['title']; ?></a>
+                        <div class="recent-activity-item-meta">
+                            <div class="recent-activity-item-time">更新于<?php echo $v['updated_at']; ?></div>
+                            <div class="recent-activity-item-comment"><span><?php echo rand(5,15);?></span></div>
+                        </div>
+                    </li>
+                    <?php endforeach; ?>
+                    
+                </ul>
+                <div class="recent-activity-no-activities" style="display: none;"></div>
+                <div class="recent-activity-loader" style="display: none;">...</div>
+                <div class="recent-activity-controls" style=""><a href="/home/index/notice" data-recent-activity-seemore="">查看更多</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<footer class="footer">
+    <div class="footer-inner">
+        <a title="主页" href="#">帮助中心</a>
+        <div class="footer-language-selector">
+            <div class="dropdown language-selector" aria-haspopup="true">
+                <a class="dropdown-toggle">
+                    简体中文
+                </a>
+                <span class="dropdown-menu dropdown-menu-end" role="menu">
+            
+              <a href="#" dir="ltr" rel="nofollow" role="menuitem">
+                English (US)
+              </a>
+            
+          </span>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- / -->
+<script type="text/javascript" src="__JS__/zh-cn-b.js"></script>
+<script src="__JS__/host.js" data-brand-id="114094285894" data-return-to="https://18ico.zendesk.com/hc/zh-cn" data-theme="hc" data-locale="10" data-auth-origin="114094285894,false,true"></script>
+<script type="text/javascript">
+    /*
+
+      Greetings sourcecode lurker!
+
+      This is for internal Zendesk and legacy usage,
+      we don't support or guarantee any of these values
+      so please don't build stuff on top of them.
+
+    */
+    HelpCenter = {};
+    HelpCenter.account = {"subdomain": "18ico", "environment": "production", "name": "18ico"};
+    HelpCenter.user = {
+        "identifier": "da39a3ee5e6b4b0d3255bfef95601890afd80709", "email": null, "name": null, "role": "anonymous",
+        "avatar_url": "https://assets.zendesk.com/hc/assets/default_avatar.png", "organizations": [], "groups": []
+    };
+    HelpCenter.internal = {
+        "asset_url": "//p14.zdassets.com/hc/assets/", "current_session": {
+            "locale": "zh-cn",
+            "csrf_token": "IYxNnYh1OFRau1Keek/gxhxu83eS0Xu3BwraRERvmGlkExM+/bdXVtGc9dImomOoCAY10w783OUL/bNiZup+qQ==",
+            "shared_csrf_token": null
+        }, "settings": {"zopim_enabled": false, "spam_filter_enabled": true}, "current_record_id": null,
+        "current_record_url": null, "current_record_title": null, "search_results_count": null,
+        "current_text_direction": "ltr", "current_brand_url": "https://18ico.zendesk.com",
+        "current_host_mapping": null, "current_path": null, "authentication_domain": "https://18ico.zendesk.com",
+        "show_autocomplete_breadcrumbs": true, "heap_analytics_id": null, "user_info_changing_enabled": false,
+        "has_user_profiles_enabled": false, "has_anonymous_kb_voting": false, "has_advanced_upsell": false,
+        "has_multi_language_help_center": true, "has_user_segments": true, "mobile_device": false,
+        "mobile_site_enabled": false, "show_at_mentions": false, "has_copied_content": false, "embeddables_config": {
+            "embeddables_web_widget": false, "embeddables_automatic_answers": false, "embeddables_connect_ipms": false
+        }, "plans_url": "https://18ico.zendesk.com/hc/admin/plan?locale=zh-cn",
+        "manage_content_url": "https://18ico.zendesk.com/hc/zh-cn",
+        "arrange_content_url": "https://18ico.zendesk.com/hc/admin/arrange_contents?locale=zh-cn",
+        "general_settings_url": "https://18ico.zendesk.com/hc/admin/general_settings?locale=zh-cn",
+        "user_segments_url": "https://18ico.zendesk.com/hc/admin/user_segments?locale=zh-cn",
+        "has_community_enabled": false, "has_multiselect_field": false, "has_groups": true,
+        "has_internal_sections": true, "has_organizations": true, "has_tag_restrictions": true,
+        "has_answer_bot_web_form_enabled": false,
+        "billing_url": "/access/return_to?return_to=https://18ico.zendesk.com/billing",
+        "has_answer_bot_management": true,
+        "answer_bot_management_url": "https://18ico.zendesk.com/hc/admin/answer_bot?locale=zh-cn",
+        "is_account_owner": false, "guide_plan_state": "plan_advanced",
+        "theming_center_url": "https://18ico.zendesk.com/theming"
+    };
+</script>
+<script src="__JS__/hc_enduser-d0e2af67e71965e4d4d3.js"></script>
+<script type="text/javascript">
+    (function () {
+        var Tracker = {};
+        Tracker.track = function (eventName, data) {
+            var url = "https://18ico.zendesk.com/hc/tracking/events?locale=zh-cn";
+            var payload = {
+                "event": eventName,
+                "data": data,
+                "referrer": document.referrer
+            };
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+            xhr.send(JSON.stringify(payload));
+        };
+        Tracker.track("front_page_viewed", "BAh7AA==--50d1974e05bddc24bd4b43467913737de44d3c7e");
+    })();
+</script>
+</body>
+</html>

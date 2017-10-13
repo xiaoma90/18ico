@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>
+        我支持的项目| 18ico-区块链项目ICO服务平台
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="18ico是一家针对数字货币、区块链领域的ICO融资服务平台，由一支有着丰富数字货币、区块链行业经验的团队成立。我们致力于为广大数字货币、区块链投资者提供一个安全、诚信、公平、透明的ICO融资服务平台。">
+    <meta name="keywords" content="18ico区块链,区块链投资,区块链,区块链技术,区块链应用,区块链金融,区块链概念股,区块链原理,数字货币,数字资产">
+    <meta name="sogou_site_verification" content="C8OJXgS1E7"/>
+    <link rel="stylesheet" href="__CSS__/app-892a367653.css">
+</head>
+<body>
+{include file='view/header' /}
+<div id="user_content">
+    {include file='view/user-header' /}
+    <div class="user-container">
+        <div class="user-body">
+            {include file='view/user-menu' /}
+            <div class="user-body-right">
+                <div class="project-content" id="support_wrap">
+                    <div class="project-header">
+                        <div class="nav-type">
+                            <ul>
+                                <li><a  data-type="0" class="search-type active search">全部</a></li>
+                                <li><a  data-type="2" class="search-type search">已完成</a></li>
+                                <li><a  data-type="1" class="search-type search">未完成</a></li>
+                            </ul>
+                        </div>
+<!--                         <span class="header-right">如有疑问请 <a href="http://wpa.qq.com/msgrd?v=3&uin=3325723055&site=qq&menu=yes" class="contact-service">联系客服</a>
+                            <svg height="25" width="25" viewBox="0 0 25 25.82"><g fill-rule="evenodd" clip-rule="evenodd" fill="#4E4E4E"><path d="M12.618 20.369a3.239 3.239 0 0 0 3.064-2.232.184.184 0 0 0-.333-.151c-.005.008-.497.803-2.414 1.063a6.199 6.199 0 0 1-.831.059c-1.343 0-1.942-.506-1.947-.512a.185.185 0 0 0-.279.236 3.247 3.247 0 0 0 2.74 1.537m0 0"></path><path d="M22.925 8.489c-.017 0-.032.003-.049.003C21.753 3.63 17.461.003 12.316.003c-5.287 0-9.677 3.827-10.65 8.891A2.033 2.033 0 0 0 0 10.901v4.025c0 1.129.905 2.043 2.021 2.043a2 2 0 0 0 1.556-.756 9.395 9.395 0 0 0 5.017 5.277 1.11 1.11 0 0 1 .102-.164c.037-.047.077-.086.112-.086a.18.18 0 0 1 .098.033c-.533-.396-2.458-2.436-2.875-5.283-.183-1.252.755-2.482 1.849-2.686 1.755-.327 3.5-.698 5.254-1.02 1.115-.203 1.878-.815 2.344-1.834.109-.238.268-.72.34-1.414a.218.218 0 0 1 .212-.183c.072 0 .134.037.175.09l.048-.03c.692 1.004 2.063 3.228 2.26 5.572.227 2.68.101 4.516-1.951 6.393l-.008.008a.163.163 0 0 0 .03.252l.05.023c.015.004.027.008.041.008s.026-.004.038-.008l.086-.049a9.382 9.382 0 0 0 4.401-5.346c.298.441.765.76 1.306.871-.868 3.949-4.392 6.422-8.756 6.797a1.788 1.788 0 0 0-1.662-1.109c-.987 0-1.788.781-1.788 1.746 0 .963.8 1.746 1.788 1.746a1.78 1.78 0 0 0 1.695-1.215c5.052-.412 9.103-3.414 9.947-8.08a2.061 2.061 0 0 0 1.271-1.9V10.55a2.07 2.07 0 0 0-2.076-2.061m-1.864 1.17c-1.317-3.57-4.731-6.12-8.749-6.12-4 0-7.402 2.528-8.732 6.075-.066-.081-.144-.15-.22-.22.752-4.322 4.472-7.607 8.957-7.607 4.463 0 8.17 3.253 8.949 7.545-.078.103-.149.21-.205.327m0 0M8.594 21.49c0 .002 0 .002 0 0m0 0"></path></g></svg></span> -->
+                    </div>
+                    <div class="project-body">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>订单号</th>
+                                <th>项目名称</th>
+                                <th class="text-center">支付方式</th>
+                                <th class="text-center">时间</th>
+                                <th class="text-center">状态</th>
+                                <th class="text-center">支付金额</th>
+                            </tr>
+                            </thead>
+                            <tbody class="project-tbody " id="data_append">
+                            {volist name="data" id="vo"}
+                                <tr>
+                                <td class="text-center">{$vo.order_num}</td>
+                                <td class="text-center">{$vo.projectname}</td>
+                                <td class="text-center">                               
+                                    {switch $vo.type}
+                                        {case 1}ETH{/case}
+                                        {case 2}BTC{/case}
+                                        {case 3}LTC{/case}
+                                    {/switch}
+                                </td>
+                                <td class="text-center">{$vo.created_at}</td>
+                                <td class="text-center">
+                                    {$vo.sta}
+                                </td>
+                                <td class="text-center">{$vo.re_coin}</td>
+                                </tr>
+                            {/volist}
+                            </tbody>
+                        </table>
+<!--                         <div class="project-footer">
+
+                            <div class="page-count"><span>0条记录 </span><span>1/1页</span></div>
+                            <div id="support_page" class="project-pager"></div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__JS__/jquery2.0.3.min.js"></script>
+<script>
+    $('.search').click(function(){
+        var status = $(this).attr('data-type');
+        $.ajax({
+            url:"index",
+            type:'POST',
+            data:{status:status},
+            success:function(data){
+                console.log(data);
+                $('#data_append').html('');
+                var num = data.data.length;
+                if ( num > 0 ) {
+                    var vo = data.data
+                    var option = '';
+                    for (var i = 0; i < num; i++) {
+                        var type='';
+                        var status = '';
+                        switch (vo[i]['type']) {
+                            case "1":
+                            type = "ETH";
+                                break;
+                            case "2":
+                            type = 'BTC';
+                                break;
+                            case "3":
+                            type = 'LTC';
+                                break;
+                        }
+                        switch (vo[i]['status']) {
+                            case "1":
+                            status = "已锁定";
+                                break;
+                            case "2":
+                            status = '已参与';
+                                break;
+                            case "3":
+                            status = '已结束';
+                                break;
+                        }  
+
+                        option+='<tr>';
+                        option+='<td class="text-center">'+vo[i]['order_num']+'</td>';
+                        option+='<td class="text-center">'+vo[i]['projectname']+'</td>';
+                        option+='<td class="text-center">'+vo[i]['money']+'</td>';
+                        option+='<td class="text-center">'+type+'</td>';
+                        option+='<td class="text-center">'+vo[i]['created_at']+'</td>';
+                        option+='<td class="text-center">'+status+'</td>';
+                        option+='<td class="text-center">'+vo[i]['re_coin']+'</td>';
+                        option+='<td class="text-center">'+''+'</td>';
+                        option+='</tr>';
+                    }
+                }
+                    $('#data_append').append(option);
+            }
+        });
+    });
+</script>
+
+{include file='view/footer' /}
+ <div class="toolbar">
+    <a href="#" id="back_to_top" title="返回顶部">
+        <svg height="30" width="30" viewBox="0 0 30 30">
+
+            <path d="M30 26c0 2.2-1.8 4-4 4H4c-2.2 0-4-1.8-4-4V4c0-2.2 1.8-4 4-4h22c2.2 0 4 1.8 4 4v22z" opacity=".3"></path><path fill="#FFF" d="M25.002 18.463l-1.134-1.134-1.321-1.321L15 8.461l-7.438 7.438-1.227 1.226-1.338 1.338c-.778.777-.868 1.96-.2 2.628s1.85.577 2.628-.2l2.172-2.172L15 13.317l2.691 2.691 3.496 3.496 1.387 1.387c.777.777 1.96.868 2.628.2s.577-1.851-.2-2.628z"></path></svg>
+    </a>
+</div>
+<script src="__JS__/vendor-140c67b313.bundle.js"></script>
+<script src="__JS__/app-d2b0299975.bundle.js"></script>
+<script src="__JS__/header-ee96b9a909.bundle.js"></script>
+<script src="__JS__/user-4fdf20982d.bundle.js"></script>
+</body>
+</html>

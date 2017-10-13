@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>
+        会员登录| ico365-区块链项目ICO服务平台
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="ico365是一家针对数字货币、区块链领域的ICO融资服务平台，由一支有着丰富数字货币、区块链行业经验的团队成立。我们致力于为广大数字货币、区块链投资者提供一个安全、诚信、公平、透明的ICO融资服务平台。">
+    <meta name="keywords" content="ico365区块链,区块链投资,区块链,区块链技术,区块链应用,区块链金融,区块链概念股,区块链原理,数字货币,数字资产">
+    <meta name="sogou_site_verification" content="C8OJXgS1E7"/>
+    <link rel="stylesheet" href="__CSS__/app-892a367653.css">
+</head>
+<body>
+{include file='view/header' /}
+<style type="text/css">
+    .btn-lg, .btn-group-lg > .btn{
+        padding: 7px 10px;
+    }
+</style>
+<div id="sign_content">
+    <div id="sign_frame">
+        <div class="sign-in-wrap ">
+            <h3>会员登录</h3>
+            <form>
+                <div class="auth-form">
+                    <div class="input-group">
+                        <svg width="19" height="19" viewBox="0 0 19 19">
+
+                            <path fill="currentColor" d="M16.48 19c.01-.133.041-.26.041-.396 0-3.715-3.144-6.729-7.021-6.729s-7.022 3.014-7.022 6.729c0 .137.033.264.042.396H.021C.015 18.867 0 18.738 0 18.603c0-3.631 2.224-6.756 5.434-8.219-1.295-1.087-2.129-2.666-2.129-4.446C3.305 2.658 6.079 0 9.5 0c3.422 0 6.195 2.658 6.195 5.938 0 1.78-.833 3.359-2.13 4.446C16.775 11.847 19 14.972 19 18.603c0 .135-.016.266-.021.396H16.48V19zM9.5 2.374c-2.053 0-3.717 1.595-3.717 3.563 0 1.967 1.665 3.562 3.717 3.562s3.718-1.595 3.718-3.562c0-1.968-1.665-3.563-3.718-3.563z"></path></svg>
+                        <label for=""></label>
+                        <input id="account" placeHolder="邮箱/手机号" name="account" type="text" class="form-control input-lg" autocomplete="off">
+                    </div>
+                    <div class="input-group">
+                        <svg width="18" height="24" viewBox="0 0 18 24">
+
+                            <g fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"><path d="M9 14.25a1.5 1.5 0 0 0-1.5 1.5c0 .455.25 1.32.5 2.004.204.557.461.994 1 .994.586 0 .796-.434 1-.986.254-.686.5-1.555.5-2.012a1.5 1.5 0 0 0-1.5-1.5z"></path><path d="M15.75 9.75v-3A6.749 6.749 0 0 0 9 0a6.75 6.75 0 0 0-6.75 6.75v3A2.25 2.25 0 0 0 0 12v5.25A6.75 6.75 0 0 0 6.75 24h4.5A6.749 6.749 0 0 0 18 17.25V12a2.25 2.25 0 0 0-2.25-2.25zM9 2.49a4.26 4.26 0 0 1 4.26 4.26v3H4.74v-3A4.26 4.26 0 0 1 9 2.49zm6.684 12.045v2.674c0 2.578-2.1 4.678-4.679 4.678h-4.01a4.685 4.685 0 0 1-4.679-4.678V12.53c0-.369.3-.668.668-.668H15.015c.368 0 .668.299.668.668v2.005z"></path></g></svg>
+                        <label for=""></label>
+                        <input id="password" placeHolder="登录密码" name="password" type="password" class="form-control input-lg" autocomplete="off">
+                    </div>
+                    <div id="embed-captcha"></div>
+                    <p id="wait" class="hide">正在加载验证码......</p>
+                    <p id="notice" class="hide">请先完成验证</p>
+                    <div class="btn-group btn-block">
+                        <input class="btn btn-block btn-lg btn-primary" id="login_btn" type="button" value="立即登录"/>
+                    </div>
+                    <div class="forget-pwd">
+                        <a class="ico-agree">
+                            <svg height="18" width="18" viewBox="0 0 18 18">
+
+                                <path class="check-color" fill-rule="evenodd" clip-rule="evenodd" fill="#24D96D" d="M3.389 8.418l3.273 2.609 8.151-7.51s.547-.5 1.024-.109c.143.118.307.45-.063.97l-8.511 9.97s-.653.893-1.427-.01L2.165 9.379s-.436-.671.109-1.075c.184-.135.602-.345 1.115.114m0 0"></path><path class="border-color" fill="#9B9B9B" d="M17 1v16H1V1h16m1-1H0v18h18V0z"></path></svg>
+                        </a>
+                        <span>记住密码</span>
+                        <a class="text-blue" href="/home/login/getpwd">忘记密码？</a>
+                    </div>
+                </div>
+            </form>
+            <div class="sign-footer">
+                <span>还没有18ICO账号？&nbsp;<a href="/home/login/register" class="switch-link">点击注册&gt;&gt;</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+{include file='view/footer' /}
+ <div class="toolbar">
+    <a href="javascript:" id="back_to_top" title="返回顶部">
+        <svg height="30" width="30" viewBox="0 0 30 30">
+
+            <path d="M30 26c0 2.2-1.8 4-4 4H4c-2.2 0-4-1.8-4-4V4c0-2.2 1.8-4 4-4h22c2.2 0 4 1.8 4 4v22z" opacity=".3"></path><path fill="#FFF" d="M25.002 18.463l-1.134-1.134-1.321-1.321L15 8.461l-7.438 7.438-1.227 1.226-1.338 1.338c-.778.777-.868 1.96-.2 2.628s1.85.577 2.628-.2l2.172-2.172L15 13.317l2.691 2.691 3.496 3.496 1.387 1.387c.777.777 1.96.868 2.628.2s.577-1.851-.2-2.628z"></path></svg>
+    </a>
+</div>
+<!--<script src="__JS__/vendor-140c67b313.bundle.js"></script>-->
+<!--<script src="__JS__/app-d2b0299975.bundle.js"></script>-->
+<!--<script src="__JS__/header-ee96b9a909.bundle.js"></script>-->
+<!--<script src="__JS__/login-ad2f6cee11.bundle.js" charset="utf-8"></script>-->
+<script src="__JS__/jquery.js"></script>
+<script>
+    $(".ico-agree").click(function () {
+        $(this).toggleClass("unchecked");
+    })
+    $("#login_btn").click(function () {
+        let account = $('#account').val();
+        let password = $('#password').val();
+        $.ajax({
+            url : '/home/login/login',
+            type : 'post',
+            data : {
+                account:account,
+                password:password
+            },
+            success:function(res){
+                alert(res.msg);
+                if(res.code == 1){
+                    location.href = '/home/user/index';
+                }
+            }
+        })
+    })
+</script>
+
+</body>
+</html>

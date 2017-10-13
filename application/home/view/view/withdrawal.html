@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>
+        资金提现
+        | 18ico-区块链项目ICO服务平台
+    </title>
+    <meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="18ico是一家针对数字货币、区块链领域的ICO融资服务平台，由一支有着丰富数字货币、区块链行业经验的团队成立。我们致力于为广大数字货币、区块链投资者提供一个安全、诚信、公平、透明的ICO融资服务平台。">
+    <meta name="keywords" content="ico365区块链,区块链投资,区块链,区块链技术,区块链应用,区块链金融,区块链概念股,区块链原理,数字货币,数字资产">
+    <meta name="sogou_site_verification" content="C8OJXgS1E7"/>
+    <link rel="stylesheet" href="__CSS__/app-892a367653.css">
+</head>
+<body>
+{include file='view/header' /}
+<div id="user_content">
+    {include file="view/user-header" /} 
+    <div class="user-container">
+        <div class="user-body">
+        {include file="view/user-menu" /}
+            <div class="user-body-right">
+                <div id="withdrawal_wrap">
+                    <div class="withdrawal-content">
+                        <div id="withdrawal_form">
+                            <div class="warning-box">
+                                <svg height="20px" width="20px">
+                                    <use xlink:href="#icon-warning"></use>
+                                </svg>
+                                <p>为了您的资金安全，在更改安全设置后24小时内不允许提币，提币申请统一于20：00审核！</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="top">提币地址：</label>
+                                <a href="javascript:" id="unable_add_address">添加新币址</a>
+                            </div>
+                            <div class="form-group">
+                                <label for="bit_count" class="top">提币数量：</label>
+                                <div class="inline">
+                                    <input type="text" id="bit_count" autocomplete="off">
+                                    <p>可提现最大金额（含手续费）：<span class="red btc-font-family" id="max-wd-money">฿0.00/ETH0.00</span></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="brokerage">网络手续费：</label>
+                                <input type="text" id="brokerage" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label for="security_pwd" class="top">资金密码：</label>
+                                <div class="inline">
+                                    <input type="password" autocomplete="off" name="inputword" class="hide">
+                                    <input type="password" autocomplete="off" name="inputword" id="security_pwd">
+                                    <p class="forget-para"><a href="security.html" id="forget_pwd">忘记密码</a></p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="verify_code">邮箱验证码：</label>
+                                <input type="text" id="verify_code" autocomplete="off">
+                                <button type="button" class="send-phone-code" data-type="email">发送验证码</button>
+                            </div>
+                            <div class="form-group">
+                                <label for=""></label>
+                                <a id="submit_address_btn" class="btn btn-common" href="javascript:">提交</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="withdrawal_log">
+                        <h3 class="h3">提现记录</h3>
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                            <tr>
+                                <th class="w100">提现时间</th>
+                                <th>提现金额</th>
+                                <th>网络手续费</th>
+                                <th class="w300">提现地址</th>
+                                <th>提现状态</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="withdrawal-tbody">
+                            </tbody>
+                        </table>
+                        <div class="withdrawal-footer">
+                            <div class="page-count"><span>0条记录 </span><span>1/1页</span></div>
+                            <div id="withdrawal_page" class="withdrawal-pager"></div>
+                        </div>
+                    </div>
+                    <div id="add_btc_address" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="add_btc_address_label">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="add-management-label">添加新币址</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div id="" class="dialog-container">
+                                        <div class="form-group">
+                                            <label for="remarks">备注名称：</label>
+                                            <input type="text" id="remarks" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="province">提币到：</label>
+                                            <div class="coin-select">
+                                                <p class="select-header">
+                                                    <span class="coin-txt">请选择币种钱包</span>
+                                                    <input type="hidden" name="coin">
+                                                    <svg height="10" width="10">
+                                                        <use xlink:href="#icon-triangle-down"></use>
+                                                    </svg>
+                                                </p>
+                                                <ul class="coin-list person-coin-list"></ul>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="btc_address">提币地址：</label>
+                                            <input type="text" id="btc_address" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">邮箱验证码：</label>
+                                            <input type="text" id="email" class="form-control verify-code">
+                                            <button type="button" class="send-code-btn" data-type="email">发送验证码</button>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">资金密码：</label>
+                                            <input type="password" id="password" class="form-control">
+                                        </div>
+                                        <div class="btn-text">
+                                            <a id="save_address_btn" class="btn btn-common" href="javascript:">确认</a>
+                                            <a id="cancel_address_btn" class="btn btn-common" data-dismiss="modal" href="javascript:">取消</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{include file='view/footer' /}
+ <div class="toolbar">
+    <a href="javascript:" id="back_to_top" title="返回顶部">
+        <svg height="30" width="30" viewBox="0 0 30 30"><path d="M30 26c0 2.2-1.8 4-4 4H4c-2.2 0-4-1.8-4-4V4c0-2.2 1.8-4 4-4h22c2.2 0 4 1.8 4 4v22z" opacity=".3"></path><path fill="#FFF" d="M25.002 18.463l-1.134-1.134-1.321-1.321L15 8.461l-7.438 7.438-1.227 1.226-1.338 1.338c-.778.777-.868 1.96-.2 2.628s1.85.577 2.628-.2l2.172-2.172L15 13.317l2.691 2.691 3.496 3.496 1.387 1.387c.777.777 1.96.868 2.628.2s.577-1.851-.2-2.628z"></path></svg>
+    </a>
+</div>
+<script src="__JS__/vendor-140c67b313.bundle.js"></script>
+<script src="__JS__/app-d2b0299975.bundle.js"></script>
+<script src="__JS__/header-ee96b9a909.bundle.js"></script>
+<script src="__JS__/user-4fdf20982d.bundle.js"></script>
+</body>
+</html>

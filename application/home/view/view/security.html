@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>
+        安全设置| 18ico-区块链项目ICO服务平台
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="18ico是一家针对数字货币、区块链领域的ICO融资服务平台，由一支有着丰富数字货币、区块链行业经验的团队成立。我们致力于为广大数字货币、区块链投资者提供一个安全、诚信、公平、透明的ICO融资服务平台。">
+    <meta name="keywords" content="18ico区块链,区块链投资,区块链,区块链技术,区块链应用,区块链金融,区块链概念股,区块链原理,数字货币,数字资产">
+    <meta name="sogou_site_verification" content="C8OJXgS1E7"/>
+    <link rel="stylesheet" href="__CSS__/app-892a367653.css">
+</head>
+<body>
+{include file='view/header' /}
+<div id="user_content">
+    {include file="view/user-header" /}
+    <div class="user-container">
+        <div class="user-body">
+            {include file="view/user-menu" /}
+            <div class="user-body-right">
+                <div id="security_wrap">
+                    <div class="security-box">
+                        <h3 class="h3">安全设置</h3>
+                        <div class="security-setting">
+                            <div class="phone-setting">
+                                <div class="setting-left">
+                                    <svg width="25px" height="25px" viewBox="0 0 25 25">
+
+                                        <path class="success-color" fill-rule="evenodd" clip-rule="evenodd" fill="#24D96D" d="M12.499 0C5.607 0 0 5.607 0 12.5S5.607 25 12.499 25C19.393 25 25 19.393 25 12.5S19.393 0 12.499 0zm7.765 9.019l-9.33 9.33a.575.575 0 0 1-.812 0l-1.224-1.224-4.05-4.05a.573.573 0 0 1 0-.812l1.224-1.224a.573.573 0 0 1 .812 0l3.645 3.645 7.7-7.701a.575.575 0 0 1 .812 0l1.224 1.224a.577.577 0 0 1-.001.812z"></path></svg>
+                                    <span class="has-set setting-title">手机号码</span>
+                                    <span class="setting-txt">账户变动时通知该手机号码：{$user.phone}</span>
+                                </div>
+                                <a href="javascript:" class="setting-btn" data-toggle="modal" data-backdrop="static" data-target="#change_phone_modal">修改</a>
+                            </div>
+                        </div>
+                        <div class="security-setting">
+                            <div class="password-setting">
+                                <div class="setting-left">
+                                    <svg width="25px" height="25px" viewBox="0 0 25 25">
+
+                                        <path class="success-color" fill-rule="evenodd" clip-rule="evenodd" fill="#24D96D" d="M12.499 0C5.607 0 0 5.607 0 12.5S5.607 25 12.499 25C19.393 25 25 19.393 25 12.5S19.393 0 12.499 0zm7.765 9.019l-9.33 9.33a.575.575 0 0 1-.812 0l-1.224-1.224-4.05-4.05a.573.573 0 0 1 0-.812l1.224-1.224a.573.573 0 0 1 .812 0l3.645 3.645 7.7-7.701a.575.575 0 0 1 .812 0l1.224 1.224a.577.577 0 0 1-.001.812z"></path></svg>
+                                    <span class="has-set setting-title">登录密码</span>
+                                    <span class="setting-txt">您上次登录的时间为：{$user.updated_at} </span>
+                                </div>
+                                <a href="/home/login/getpwd" class="setting-btn">修改</a>
+                            </div>
+                        </div>
+                        {if empty($user.email)}
+                        <div class="security-setting">
+                            <div class="email-setting">
+                                <div class="setting-left">
+                                    <svg width="25px" height="25px" viewBox="0 0 25 25">
+
+                                        <path class="danger-color" fill-rule="evenodd" clip-rule="evenodd" fill="#CF4646" d="M12.5 0C5.625 0 0 5.625 0 12.5S5.625 25 12.5 25 25 19.375 25 12.5 19.375 0 12.5 0zm0 21.429a1.792 1.792 0 0 1-1.786-1.786c0-.981.804-1.785 1.786-1.785a1.79 1.79 0 0 1 1.785 1.785 1.79 1.79 0 0 1-1.785 1.786zm2.321-13.483s0 .09 0 0c0 .089-1.518 7.144-1.518 7.144s.089-.536 0 0c-.089.535-.357.803-.804.803s-.713-.357-.803-.893c-.178-.536-1.518-6.875-1.518-6.875 0-.179-.089-.357-.089-.446A2.4 2.4 0 0 1 12.5 5.268a2.4 2.4 0 0 1 2.411 2.411s-.09.178-.09.267zm0 0"></path></svg>
+                                    <span class="setting-title">邮箱绑定</span>
+                                    <span class="setting-txt">用于登录，提现时进行确认</span>
+                                </div>
+                                <a href="javascript:" class="setting-btn" data-toggle="modal" data-backdrop="static" data-target="#bind_mail">修改</a>
+                            </div>
+                        </div>
+                        {else}
+                        <div class="security-setting">
+                            <div class="email-setting">
+                                <div class="setting-left">
+                                   <svg width="25px" height="25px" viewBox="0 0 25 25">
+
+                                        <path class="success-color" fill-rule="evenodd" clip-rule="evenodd" fill="#24D96D" d="M12.499 0C5.607 0 0 5.607 0 12.5S5.607 25 12.499 25C19.393 25 25 19.393 25 12.5S19.393 0 12.499 0zm7.765 9.019l-9.33 9.33a.575.575 0 0 1-.812 0l-1.224-1.224-4.05-4.05a.573.573 0 0 1 0-.812l1.224-1.224a.573.573 0 0 1 .812 0l3.645 3.645 7.7-7.701a.575.575 0 0 1 .812 0l1.224 1.224a.577.577 0 0 1-.001.812z"></path></svg>
+                                    <span class="has-set setting-title">邮箱已绑定</span>
+                                    <span class="setting-txt">用于登录，提现时进行确认</span>
+                                </div>
+                                <a href="index.html" class="setting-btn" >修改</a>
+                            </div>
+                        </div>
+
+                        {/if}
+                       
+                        {if empty($user.two_password)}
+                         <div class="security-setting">
+                            <div class="code-setting">
+                                <div class="setting-left">
+                                    <svg width="25px" height="25px" viewBox="0 0 25 25">
+
+                                        <path class="danger-color" fill-rule="evenodd" clip-rule="evenodd" fill="#CF4646" d="M12.5 0C5.625 0 0 5.625 0 12.5S5.625 25 12.5 25 25 19.375 25 12.5 19.375 0 12.5 0zm0 21.429a1.792 1.792 0 0 1-1.786-1.786c0-.981.804-1.785 1.786-1.785a1.79 1.79 0 0 1 1.785 1.785 1.79 1.79 0 0 1-1.785 1.786zm2.321-13.483s0 .09 0 0c0 .089-1.518 7.144-1.518 7.144s.089-.536 0 0c-.089.535-.357.803-.804.803s-.713-.357-.803-.893c-.178-.536-1.518-6.875-1.518-6.875 0-.179-.089-.357-.089-.446A2.4 2.4 0 0 1 12.5 5.268a2.4 2.4 0 0 1 2.411 2.411s-.09.178-.09.267zm0 0"></path></svg>
+                                    <span class="setting-title">资金密码</span>
+                                    <span class="setting-txt">提现，修改安全设置时输入</span>
+                                </div>
+                                <a href="#" class="setting-btn" data-toggle="modal" data-backdrop="static" data-target="#set_safe_pwd">设置</a>
+                            </div>
+                        </div>
+                        {else}
+                         <div class="security-setting">
+                            <div class="code-setting">
+                                <div class="setting-left">
+                                    <svg width="25px" height="25px" viewBox="0 0 25 25">
+                                        <path class="success-color" fill-rule="evenodd" clip-rule="evenodd" fill="#24D96D" d="M12.499 0C5.607 0 0 5.607 0 12.5S5.607 25 12.499 25C19.393 25 25 19.393 25 12.5S19.393 0 12.499 0zm7.765 9.019l-9.33 9.33a.575.575 0 0 1-.812 0l-1.224-1.224-4.05-4.05a.573.573 0 0 1 0-.812l1.224-1.224a.573.573 0 0 1 .812 0l3.645 3.645 7.7-7.701a.575.575 0 0 1 .812 0l1.224 1.224a.577.577 0 0 1-.001.812z"></path></svg>
+                                    <span class="has-set setting-title">资金密码</span>
+                                    <span class="setting-txt">提现，修改安全设置时输入</span>
+                                </div>
+                                <a href="#" class="setting-btn" data-toggle="modal" data-backdrop="static" data-target="#set_safe_pwd">修改</a>
+                            </div>
+                        </div>
+                        {/if}
+
+                        {if $user.type==3}
+                            <div class="security-setting">
+                                <div class="identity-setting">
+                                    <div class="setting-left">
+                                        <svg width="25px" height="25px" viewBox="0 0 25 25">
+
+                                        <path class="success-color" fill-rule="evenodd" clip-rule="evenodd" fill="#24D96D" d="M12.499 0C5.607 0 0 5.607 0 12.5S5.607 25 12.499 25C19.393 25 25 19.393 25 12.5S19.393 0 12.499 0zm7.765 9.019l-9.33 9.33a.575.575 0 0 1-.812 0l-1.224-1.224-4.05-4.05a.573.573 0 0 1 0-.812l1.224-1.224a.573.573 0 0 1 .812 0l3.645 3.645 7.7-7.701a.575.575 0 0 1 .812 0l1.224 1.224a.577.577 0 0 1-.001.812z"></path></svg>
+                                        <span class="has-set setting-title">身份认证</span>
+                                        <span class="setting-txt">确认用户真实身份</span>
+                                    </div>
+                                    <a href="/home/user/identity" class="setting-btn">已认证</a>
+                                </div>
+                            </div>
+
+                        {else}
+                            <div class="security-setting">
+                                <div class="identity-setting">
+                                    <div class="setting-left">
+                                        <svg width="25px" height="25px" viewBox="0 0 25 25">
+
+                                            <path class="danger-color" fill-rule="evenodd" clip-rule="evenodd" fill="#CF4646" d="M12.5 0C5.625 0 0 5.625 0 12.5S5.625 25 12.5 25 25 19.375 25 12.5 19.375 0 12.5 0zm0 21.429a1.792 1.792 0 0 1-1.786-1.786c0-.981.804-1.785 1.786-1.785a1.79 1.79 0 0 1 1.785 1.785 1.79 1.79 0 0 1-1.785 1.786zm2.321-13.483s0 .09 0 0c0 .089-1.518 7.144-1.518 7.144s.089-.536 0 0c-.089.535-.357.803-.804.803s-.713-.357-.803-.893c-.178-.536-1.518-6.875-1.518-6.875 0-.179-.089-.357-.089-.446A2.4 2.4 0 0 1 12.5 5.268a2.4 2.4 0 0 1 2.411 2.411s-.09.178-.09.267zm0 0"></path></svg>
+                                        <span class="setting-title">身份认证</span>
+                                        <span class="setting-txt">确认用户真实身份</span>
+                                    </div>
+                                    <a href="/home/user/identity" class="setting-btn">立即认证</a>
+                                </div>
+                            </div>
+                            
+                        {/if}
+                    </div>
+                    <!-- <div class="log-box">
+                        <h3 class="h3">最近十次登录记录</h3>
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                            <tr>
+                                <th>登录时间</th>
+                                <th>登录IP</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>2017-08-30 17:13:03</td>
+                                <td>115.57.132.97</td>
+                            </tr>
+                            <tr>
+                                <td>2017-08-30 14:35:44</td>
+                                <td>115.57.132.97</td>
+                            </tr>
+                            <tr>
+                                <td>2017-08-30 14:24:51</td>
+                                <td>115.57.132.97</td>
+                            </tr>
+                            <tr>
+                                <td>2017-08-30 11:47:32</td>
+                                <td>115.57.132.97</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="change_phone_modal" class="bind-phone-dialog modal fade in" tabindex="-1" role="dialog" aria-labelledby="change_phone_label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="management-label">修改手机号码</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="change-phone">
+                        <div id="" class="dialog-container">
+                            <div class="old-phone">
+                                <div class="dr">
+                                    <div class="dh">原手机号码：</div>
+                                    <div class="dt">
+                                        <input class="text form-control" type="text" name="change_old_phone" id="change_old_phone" placeholder="请输入原手机号码">
+                                    </div>
+                                    <a href="javascript:" id="getOldPhoneCode">获取验证码</a>
+                                </div>
+                                <div class="dr">
+                                    <div class="dh">验证码：</div>
+                                    <div class="dt"><input class="text form-control" type="text" name="inputOldCode" id="inputOldCode" title=""></div>
+                                </div>
+                            </div>
+                            <div class="new-phone">
+                                <div class="dr">
+                                    <div class="dh">新手机号码：</div>
+                                    <div class="dt">
+                                        <input class="text form-control" type="text" name="change_new_phone" id="change_new_phone" placeholder="请输入新手机号码">
+                                    </div>
+                                    <a href="javascript:" id="getNewPhoneCode">获取验证码</a>
+                                </div>
+                                <div class="dr">
+                                    <div class="dh">验证码：</div>
+                                    <div class="dt"><input class="text form-control" type="text" name="inputNewCode" id="inputNewCode" title=""></div>
+                                </div>
+                                <div class="btn-next">
+                                    <a id="getNewPhoneFinish" class="btn-common" href="javascript:">完成</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- <div id="bind_mail" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="bind_mail_label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="user-markets-management-label">绑定登录邮箱</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="change-email">
+                        <div id="" class="dialog-container">
+                            <div class="old-mail">
+                                <div class="dr">
+                                    <div class="dh email-label">原邮箱地址：</div>
+                                    <div class="dt">
+                                        <input class="text form-control" type="text" name="old_email" id="old_email">
+                                    </div>
+                                    <a id="getOldMailCode" class="btn-common" href="javascript:">发送验证邮件</a>
+                                </div>
+                                <div class="dr">
+                                    <div class="dh email-label">验证码：</div>
+                                    <div class="dt">
+                                        <input class="text form-control" type="text" name="email_code" id="old_mail_code">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="new-mail">
+                                <div class="dr">
+                                    <div class="dh email-label">新邮箱地址：</div>
+                                    <div class="dt">
+                                        <input class="text form-control" type="text" name="email" id="lg_email">
+                                    </div>
+                                </div>
+                                <div class="btn-next">
+                                    <a id="getSecurityEmail" class="btn-common" href="javascript:">发送验证邮件</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div id="set_safe_pwd" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="set_pwd_label">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="user-markets-management-label">设置资金密码</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="change-email">
+                    <form id="security" method="post" action="" >
+                        <div id="" class="dialog-container">
+                            <div class="dr">
+                                <div class="dh">资金密码：</div>
+                                <div class="dt">
+                                    <input class="text form-control" type="password" id="pwd" />
+                                </div>
+                            </div>
+                            <div class="dr">
+                                <div class="dh">确认资金密码：</div>
+                                <div class="dt">
+                                    <input class="text form-control" type="password" id="two_pwd" />
+                                </div>
+                            </div>
+                            <div class="dr">
+                                <div class="dh">手机号：</div>
+                                <div class="dt">
+                                    <input class="text form-control" type="text" id="phones" readonly value="{$user.phone}"  >
+                                </div>
+                            </div>
+                            <div class="dr">
+                                <div class="dh">手机验证码：</div>
+                                <div class="dt">
+                                    <input class="text form-control" type="text" id="code" />
+                                    <a href="javascript:getcode()" data-type="email">获取验证码</a>
+                                </div>
+                            </div>
+                            <div class="btn-next">
+                                <a  class="btn-common" href="javascript:sub()">完成</a>
+                            </div>
+                        </div>
+                       </form> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function getcode(){
+        $.ajax({
+            url:'/home/login/getCode',
+            type:'post',
+            data:{
+                phone:$('#phones').val(),
+            },
+            success:function(res){
+                layer.msg(res.msg);
+            }
+        })
+    }
+    function sub(){
+        $data = $('#security').serialize();
+        $.ajax({
+         url:'/home/login/towPwdEdit',
+         method:'post',
+         data:{
+                pwd:$('#pwd').val(),
+                two_pwd:$('#two_pwd').val(),
+                code:$('#code').val()
+                    },
+         success:function(req){
+                if(req.code==1){
+                    alert(req.msg)
+                    location.reload();
+                }else{
+                    alert(req.msg)
+                }
+         },
+         error:function(){
+            alert('网络错误');
+         }
+       });
+    }
+</script>
+{include file="view/footer" /}
+ <div class="toolbar">
+    <a href="javascript:" id="back_to_top" title="返回顶部">
+        <svg height="30" width="30" viewBox="0 0 30 30">
+
+            <path d="M30 26c0 2.2-1.8 4-4 4H4c-2.2 0-4-1.8-4-4V4c0-2.2 1.8-4 4-4h22c2.2 0 4 1.8 4 4v22z" opacity=".3"></path><path fill="#FFF" d="M25.002 18.463l-1.134-1.134-1.321-1.321L15 8.461l-7.438 7.438-1.227 1.226-1.338 1.338c-.778.777-.868 1.96-.2 2.628s1.85.577 2.628-.2l2.172-2.172L15 13.317l2.691 2.691 3.496 3.496 1.387 1.387c.777.777 1.96.868 2.628.2s.577-1.851-.2-2.628z"></path></svg>
+    </a>
+</div>
+<script src="__JS__/vendor-140c67b313.bundle.js"></script>
+<script src="__JS__/app-d2b0299975.bundle.js"></script>
+<script src="__JS__/header-ee96b9a909.bundle.js"></script>
+<script src="__JS__/user-4fdf20982d.bundle.js"></script>
+</body>
+</html>

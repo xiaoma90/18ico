@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>
+        资金充值
+        | 18ico-区块链项目ICO服务平台
+    </title>
+    <meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="18ico是一家针对数字货币、区块链领域的ICO融资服务平台，由一支有着丰富数字货币、区块链行业经验的团队成立。我们致力于为广大数字货币、区块链投资者提供一个安全、诚信、公平、透明的ICO融资服务平台。">
+    <meta name="keywords" content="18ico区块链,区块链投资,区块链,区块链技术,区块链应用,区块链金融,区块链概念股,区块链原理,数字货币,数字资产">
+    <meta name="sogou_site_verification" content="C8OJXgS1E7"/>
+    <link rel="stylesheet" href="__CSS__/app-892a367653.css">
+    <style>
+        .chargeAddress{
+            width: 100%;
+        }
+        #recharge_wrap .recharge-address .address .recharge-top .btc_address{
+            width: 75%;
+            float: left;
+        }
+        #recharge_wrap .recharge-address .address .recharge-top .copy-the-address{
+            margin-top: 0px;
+        }
+        #recharge_wrap .recharge-address .address{
+            height: 130px;
+        }
+    </style>
+</head>
+<body>
+{include file='view/header' /}
+<div id="user_content">
+{include file='view/user-header'}
+    <div class="user-container">
+        <div class="user-body">
+            {include file="view/user-menu" /}
+            <div class="user-body-right">
+                <div id="recharge_wrap">
+                    <div class="recharge-address">
+                        <div class="address-left address">
+                            <div class="recharge-top">
+                                <h3>BTC充值地址：</h3>
+                                <div class="chargeAddress">
+                                    <span class="btc_address" id="my_btc_address">{$user.btc_num}</span>
+                                    <a href="javascript:" data-clipboard-target="#my_btc_address" class="copy-the-address">复制</a>
+                                </div>
+                            </div>
+                            <!-- <div class="recharge-content">
+                                <h4>扫二维码充值</h4>
+                                <div class="btc-qrcode" style="float: left" >
+                            <img src="/uploads/qrcode/{$user.btc_num}.png">
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="address-left address">
+                            <div class="recharge-top">
+                                <h3>LTC充值地址：</h3>
+                                <div class="chargeAddress">
+                                    <span class="btc_address" id="my_btc_address">{$user.ltc_num}</span>
+                                    <a href="javascript:" data-clipboard-target="#my_btc_address" class="copy-the-address">复制</a>
+                                </div>
+                            </div>
+                            <!-- <div class="recharge-content">
+                                <h4>扫二维码充值</h4>
+                                <div class="btc-qrcode" >
+                                <img src="/uploads/qrcode/{$user.ltc_num}.png">
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="address-left address">
+                            <div class="recharge-top">
+                                <h3>ETH充值地址：</h3>
+                                <div class="chargeAddress">
+                                    <span class="btc_address" id="my_eth_address">{$user.eth_num}</span>
+                                    <a href="javascript:" data-clipboard-target="#my_eth_address" class="copy-the-address">复制</a>
+                                </div>
+                            </div>
+                           <!--  <div class="recharge-content">
+                               <h4>扫二维码充值</h4>
+                               <div class="btc-qrcode" >
+                           <img src="/uploads/qrcode/{$user.eth_num}.png">
+                               </div>
+                           </div> -->
+                        </div>
+                        <p style="color:red;">近期18ICO平台业务安全升级，我们为每个用户提供了全新的BTC和ETH充值地址。请用户在进行充值业务时，务必使用本页所显示的新地址，以确保充值及时到账！</p>
+                        <p>所有充值需要两个网络确认后到账，一旦完成充值，待18ico确认收到充值后，将会发邮件或手机短信通知您，您可以在充值记录里查看充值状态！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="view/footer" /}
+ <div class="toolbar">
+    <a href="javascript:" id="back_to_top" title="返回顶部">
+        <svg height="30" width="30" viewBox="0 0 30 30"><path d="M30 26c0 2.2-1.8 4-4 4H4c-2.2 0-4-1.8-4-4V4c0-2.2 1.8-4 4-4h22c2.2 0 4 1.8 4 4v22z" opacity=".3"></path><path fill="#FFF" d="M25.002 18.463l-1.134-1.134-1.321-1.321L15 8.461l-7.438 7.438-1.227 1.226-1.338 1.338c-.778.777-.868 1.96-.2 2.628s1.85.577 2.628-.2l2.172-2.172L15 13.317l2.691 2.691 3.496 3.496 1.387 1.387c.777.777 1.96.868 2.628.2s.577-1.851-.2-2.628z"></path></svg>
+    </a>
+</div>
+<script src="__JS__/vendor-140c67b313.bundle.js"></script>
+<script src="__JS__/app-d2b0299975.bundle.js"></script>
+<script src="__JS__/header-ee96b9a909.bundle.js"></script>
+<script src="__JS__/user-4fdf20982d.bundle.js"></script>
+</body>
+</html>

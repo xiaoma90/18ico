@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>
+        身份认证| ico365-区块链项目ICO服务平台
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="18ico是一家针对数字货币、区块链领域的ICO融资服务平台，由一支有着丰富数字货币、区块链行业经验的团队成立。我们致力于为广大数字货币、区块链投资者提供一个安全、诚信、公平、透明的ICO融资服务平台。">
+    <meta name="keywords" content="18ico区块链,区块链投资,区块链,区块链技术,区块链应用,区块链金融,区块链概念股,区块链原理,数字货币,数字资产">
+    <link rel="stylesheet" href="__CSS__/app-892a367653.css">
+      <style type="text/css">
+       .country-select select{
+           border: 1px solid #d1d1d1;
+           color: #0b0b0b;
+           font-size: 14px;
+           height: 40px;
+           line-height: 40px;
+           width: 307px;
+           padding: 3px 15px;
+           outline: 0;
+           vertical-align: middle;
+       
+       } 
+        
+    </style>
+</head>
+<body>
+{include file='view/header' /}
+<div id="user_content">
+    {include file='view/user-header' /}
+    <div class="user-container">
+        <div class="user-body">
+            {include file="view/user-menu" /}
+            <div class="user-body-right">
+                <div class="identity-page-right" id="identity_wrap">
+                    <div class="identity-switch-box">
+                    {if $type==1}
+                        <button type="button" class="identity-switch-item person-identity active" data-type="person">个人认证</button>
+                        <button type="button" class="identity-switch-item agency-identity" data-type="agency">机构认证</button>
+                    {else}
+                        <button type="button" class="identity-switch-item person-identity" data-type="person">个人认证</button>
+                        <button type="button" class="identity-switch-item agency-identity active" data-type="agency">机构认证</button>
+                    {/if}    
+                    </div>
+                    <div class="person-identity-toggle identity-form">
+                        <form action="#" id="person_identity_form">
+                             <div class="form-group">
+                               <label for="country">国籍：</label>
+                               <div class="country-select"> 
+                                    <select name="state" id="" class="fly_select">
+                                       
+                                        <!-- <option value="">请选择国家</option> -->
+                                        <option value="中国">中国</option>
+                                       <!--  <option value="英国">英国</option>
+                                       <option value="美国">美国</option>
+                                       <option value="俄罗斯">俄罗斯</option> -->
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="china-person">
+                                <div class="form-group">
+                                    <label for="username">姓名：</label>
+                                <input type="text" name="name" value="{$data.name?:null}" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="idcard">身份证号码：</label>
+                                    <input type="text" name="card_id" value="{$data.card_id?:null}" >
+                                </div>
+                                <div class="form-group m30">
+                                    <label for="username" class="id-card">手持身份证正面：</label>
+                                    <div class="upload-identity">
+                                        <a href="javascript:" class="upload-file-button upload-id-front">
+                                          
+                                           
+                                            <img src="{$data.hand_front?:null}" name="imgurl1"  onclick="javascript:$('#fmimg1').click();" />
+                                        </a>
+                                        <p>手持身份证正面</p>
+                                    </div>
+                                    <div class="upload-example">
+                                        <div class="picture-example">
+                                            <img src="__IMG__/id-handheld.jpg"  alt="id card picture">
+                                        </div>
+                                        <div class="example-intro">
+                                            <h4>示例</h4>
+                                            <p>保证文字清晰可识别</p>
+                                            <p>图片大小不要超过1MB</p>
+                                            <p>建议使用QQ截图</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group m30">
+                                    <label for="username" class="id-card">身份证正面：</label>
+                                    <div class="upload-identity">
+                                        <a href="javascript:" class="upload-file-button upload-id-front">
+                                           <input type="hidden" value="{$data.front?:null}" name="front" > 
+                                          
+                                           
+                                            <img src="{$data.front?:null}"  name="imgurl2"  onclick="javascript:$('#fmimg2').click();" />
+                                        </a>
+                                        <p>身份证正面</p>
+                                    </div>
+                                    <div class="upload-example">
+                                        <div class="picture-example">
+                                            <img src="__IMG__/id-front.jpg" alt="id card picture">
+                                        </div>
+                                        <div class="example-intro">
+                                            <h4>示例</h4>
+                                            <p>保证文字清晰可识别</p>
+                                            <p>图片大小不要超过1MB</p>
+                                            <p>建议使用QQ截图</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group m30">
+                                    <label for="username" class="id-card">身份证背面：</label>
+                                    <div class="upload-identity">
+                                        <a href="javascript:" class="upload-file-button upload-id-front">
+                                           <input type="hidden"  name="back" > 
+                                            
+                                           
+                                            <img src="{$data.back?:null}"  name="imgurl3"  onclick="javascript:$('#fmimg3').click();" />
+                                        </a>
+                                        <p>身份证背面</p>
+                                    </div>
+                                    <div class="upload-example">
+                                        <div class="picture-example">
+                                            <img src="__IMG__/id-back.jpg" alt="id card picture">
+                                        </div>
+                                        <div class="example-intro">
+                                            <h4>示例</h4>
+                                            <p>保证文字清晰可识别</p>
+                                            <p>图片大小不要超过1MB</p>
+                                            <p>建议使用QQ截图</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="foreign-person hide">
+                                <div class="form-group">
+                                    <label for="person_name">姓名(英文或拼音)：</label>
+                                    <input type="text" value="{$data.name?:null}"  name="name1" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="person_local_name">姓名(本地语言)：</label>
+                                    <input type="text" name="local_name" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="passport_code">护照号：</label>
+                                    <input type="text" name="passport_num" >
+                                </div>
+                                <div class="form-group m30">
+                                    <label for="username" class="id-card">上传护照1：</label>
+                                    <div class="upload-identity">
+                                        <a href="javascript:" class="upload-file-button upload-id-front">
+                                           <input type="hidden" name="hand_front1" > 
+                                           
+                                            <img src="__IMG__/fly_add.png"  name="imgurl4"  onclick="javascript:$('#fmimg4').click();" />
+                                        </a>
+                                        <p>请上传护照图片</p>
+                                    </div>
+                                    <div class="passport-upload-example">
+                                        <div class="picture-example">
+                                            <img src="__IMG__/passport1.jpg" alt="passport picture">
+                                        </div>
+                                        <div class="example-intro">
+                                            <h4>示例</h4>
+                                            <p>请确保您提交的文件符合以下要求：</p>
+                                            <p>1.请提供有效国际护照，带有明确有效日期；</p>
+                                            <p>2.证件图片/文字要求清晰可见（允许水印）；</p>
+                                            <p>3.图片大小不要超过1M</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group m30">
+                                    <label for="username" class="id-card">手持护照2：</label>
+                                    <div class="upload-identity">
+                                        <a href="javascript:" class="upload-file-button upload-id-front">
+                                           <input type="hidden" name="front1" > 
+                                           
+                                            <img src="__IMG__/fly_add.png"  name="imgurl5"  onclick="javascript:$('#fmimg5').click();" />
+                                        </a>
+                                        <p>请上传护照图片</p>
+                                    </div>
+                                    <div class="passport-upload-example">
+                                        <div class="picture-example">
+                                            <img src="__IMG__/passport2.jpg" alt="passport picture">
+                                        </div>
+                                        <div class="example-intro">
+                                            <h4>示例</h4>
+                                            <p>请确保您提交的文件符合以下要求：</p>
+                                            <p>1.在拍摄时，确保五官和照片基本一致，不要遮挡面部；</p>
+                                            <p>2.证件图片/文字要求清晰可见（允许水印）；</p>
+                                            <p>3.图片大小不要超过1M</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="born_day">生日：</label>
+                                    <input type="text" name="year"  placeholder="年">
+                                    <input type="text" name="month"  placeholder="月">
+                                    <input type="text" name="days"  placeholder="日">
+                                </div>
+                                <div class="form-group">
+                                    <label>当前居住国家：</label>
+                                     <div class="country-select"> 
+                                    <select name="citys" id="" class="fly_select">
+                                        <option value="">请选择国家</option>
+                                        <option value="中国">中国</option>
+                                        <option value="英国">英国</option>
+                                        <option value="美国">美国</option>
+                                        <option value="俄罗斯">俄罗斯</option>
+                                    </select>
+                                </div>
+                                </div>
+                                <div class="form-group">
+                                    <label></label>
+                                    <span>请确保以下填写的个人住址信息与个人信息中的地址保持一致。</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="person_postcode">邮编：</label>
+                                    <input type="text" name="postage" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="person_detail_address">详细地址：</label>
+                                    <input type="text" name="detail_address" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="person_city_name">城市：</label>
+                                    <input type="text" name="city" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="person_district">州/省/地区：</label>
+                                    <input type="text" name="capitol" >
+                                </div>
+                            </div>
+                           
+                        </form>
+                       
+                    </div>
+                    <div class="agency-identity-toggle identity-form hide">
+                        <form action="#" id="agency_identity_form">
+                            <div class="form-group">
+                               <label for="country">国籍：</label>
+                               <div class="country-select"> 
+                                    <select name="state" class="fly_select">
+                                        <option value="{$data.state?:null}">{$data.state?:null}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="china-identity">
+                                <div class="form-group">
+                                    <label for="china_company_name">公司名称：</label>
+                                    <input type="text" value="{$data.company?:null}" name="company" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="register_num">企业注册号：</label>
+                                    <input type="text" value="{$data.register_num?:null}" name="register_num"  >
+                                </div>
+                                <div class="form-group">
+                                    <label for="legal_person">法人代表姓名：</label>
+                                    <input type="text" value="{$data.legal_person?:null}" name="legal_person" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="register_year">注册日期：</label>
+                                    <input type="text" value="{$data.register_time?:null}"  name="register_year" placeholder="年">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="register_address">注册地址：</label>
+                                    <input type="text" value="{$data.register_address?:null}" name="register_address" >
+                                </div>
+                                <div class="form-group m30">
+                                    <label for="business_license" class="id-card">营业执照：</label>
+                                    <div class="upload-identity">
+                                        <a href="javascript:" class="upload-file-button upload-id-front">
+                                           <input type="hidden" name="license" > 
+                                           
+                                            <img src="{$data.license?:null}"  name="imgurl6"  onclick="javascript:$('#fmimg6').click();" />
+                                        </a>
+                                        <p>企业营业执照</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="foreign-identity hide">
+                                <div class="form-group">
+                                    <label for="company_name">公司名称(英文或拼音)：</label>
+                                    <input type="text" name="company_foreign_name" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="company_local_name">公司名称(本地语言)：</label>
+                                    <input type="text" name="company_local_name" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="register_code">企业注册号：</label>
+                                    <input type="text" name="register_num1" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="for_register_year">注册日期：</label>
+                                    <input type="text" name="register_year1"  placeholder="年">
+                                    <input type="text" name="register_month1"  placeholder="月">
+                                    <input type="text" name="register_day1"  placeholder="日">
+                                </div>
+                                <div class="form-group">
+                                    <label></label>
+                                    <span>请确保以下注册住址信息真实性。</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="agency_postcode">邮编：</label>
+                                    <input type="text" name="postage" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="agency_detail_address">详细地址：</label>
+                                    <input type="text" name="detail_address" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="agency_city_name">城市：</label>
+                                    <input type="text" name="city" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="agency_district">州/省/地区：</label>
+                                    <input type="text" name="capital" >
+                                </div>
+                            </div>
+                            
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file='view/footer' /}
+ <div class="toolbar">
+    <a href="javascript:" id="back_to_top" title="返回顶部">
+        <svg height="30" width="30" viewBox="0 0 30 30">
+
+            <path d="M30 26c0 2.2-1.8 4-4 4H4c-2.2 0-4-1.8-4-4V4c0-2.2 1.8-4 4-4h22c2.2 0 4 1.8 4 4v22z" opacity=".3"></path><path fill="#FFF" d="M25.002 18.463l-1.134-1.134-1.321-1.321L15 8.461l-7.438 7.438-1.227 1.226-1.338 1.338c-.778.777-.868 1.96-.2 2.628s1.85.577 2.628-.2l2.172-2.172L15 13.317l2.691 2.691 3.496 3.496 1.387 1.387c.777.777 1.96.868 2.628.2s.577-1.851-.2-2.628z"></path></svg>
+    </a>
+</div>
+<script src="__JS__/vendor-140c67b313.bundle.js"></script>
+<script src="__JS__/app-d2b0299975.bundle.js"></script>
+<script src="__JS__/header-ee96b9a909.bundle.js"></script>
+<script src="__JS__/user-4fdf20982d.bundle.js"></script>
+</body>
+</html>

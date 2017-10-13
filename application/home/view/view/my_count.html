@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>
+        账户总览| 18ico-区块链项目ICO服务平台
+    </title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="18ico是一家针对数字货币、区块链领域的ICO融资服务平台，由一支有着丰富数字货币、区块链行业经验的团队成立。我们致力于为广大数字货币、区块链投资者提供一个安全、诚信、公平、透明的ICO融资服务平台。">
+    <meta name="keywords" content="18ico区块链,区块链投资,区块链,区块链技术,区块链应用,区块链金融,区块链概念股,区块链原理,数字货币,数字资产">
+    <meta name="sogou_site_verification" content="C8OJXgS1E7"/>
+    <link rel="stylesheet" href="__CSS__/app-892a367653.css">
+    <style>
+        #my_wrap .my-account{
+            height: auto !important; 
+        }
+        #my_wrap .my-account .account-info .account-number .account-ltc-name{
+            font-weight: lighter;
+            font-size: 27px;
+            color: #5ca4ff;
+        }
+        #my_wrap .my-account .account-info .account-number .ltc-value{
+            font-size: 25px;
+            color: #5ca4ff;
+            font-weight: 700;
+            margin-left:2px;
+        }
+        .fly_xm{
+            border: 1px solid #d1d1d1;
+            color: #0b0b0b;
+            font-size: 14px;
+            height: 40px;
+            line-height: 40px;
+            width: 270px;
+            padding: 3px 15px;
+            outline: 0;
+            vertical-align: middle;
+        }
+        .fly_ipt{
+            width: 90px !important;
+            height: 40px !important;
+            color: #3f3f3f;
+            font-family: DIN-Bold, "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 20px !important;
+            text-align: center !important;
+        }
+        #user_content .user-body-right .form-group input, #withdrawal_wrap #add_btc_address .form-group select{
+            width: 178px;
+        }
+    </style>
+</head>
+<body>
+{include file='view/header' /}
+<div id="user_content">
+    {include file='view/user-header' /}
+    <div class="user-container">
+        <div class="user-body">
+        {include file='view/user-menu' /}
+            <div class="user-body-right my-body-page">
+                <div id="my_wrap">
+                    <div class="my-account">
+                        <div class="account-info">
+                            <div class="account-title">
+                                <a href="token.html">账户余额&nbsp;></a>
+                            </div>
+                            <!-- <a href="token.html" class="my-token">我的代币</a> -->
+                            <div class="account-number">
+                                <div class="eth-account">
+                                    <span class="account-eth-name">ETH</span>
+                                    <span class="eth-value">{$user.eth_acc}</span>
+                                </div>
+                                <div class="btc-account">
+                                    <span class="account-name">BTC</span>
+                                    <span class="value">{$user.btc_acc}</span>
+                                </div>
+                                <div class="eth-account">
+                                    <span class="account-ltc-name">LTC</span>
+                                    <span class="ltc-value">{$user.ltc_acc}</span>
+                                </div>
+                            </div>
+                            <div class="account-btn">
+                                <a href="/home/user/exchange" class="recharge-btn">充值</a>
+                                <!-- <a href="/home/user/withdrawal" class="withdrawal-btn">提现</a> -->
+                                <a href="javascript:judge()" class="locked-btn" id="locked-btn">锁定投资</a>
+                            </div>
+                        </div>
+                        <div class="interval-box sprite-item interval"></div>
+                        <div class="account-detail clearfix">
+                            <div class="pro-count">
+                                <div class="item">
+                                    <svg width="20px" height="20px" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" fill="#DEDEDE" d="M1.333 0c.736 0 1.332.56 1.332 1.25V20H0V1.25C0 .56.597 0 1.333 0zM16 3.365c1.594 0 3.022-.813 4-1.429v11.635c-.978.617-2.406 1.429-4 1.429-1.595 0-3.023-.444-4-1.058-.979-.614-2.407-1.057-4-1.057-1.595 0-3.023.76-4 1.375V2.625C4.977 2.01 6.405 1.25 8 1.25c1.594 0 3.022.442 4 1.057.977.616 2.405 1.058 4 1.058z"></path>
+                                    </svg>
+                                    <span>投入次数：<a href="/home/item/index">{$p_num}</a></span>
+                                </div>
+                                <div class="item">
+                                    <svg width="19px" height="16px" viewBox="0 0 19 16.35">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" fill="#DEDEDE" d="M18.534 7.656c.061-.136.115-.272.165-.408l.021-.054c.053-.149.099-.298.138-.447l.014-.052c.034-.14.062-.28.082-.418l.014-.08c.019-.161.032-.321.032-.48 0-.18-.007-.359-.021-.539-.009-.117-.025-.232-.041-.349-.008-.061-.012-.122-.021-.183-.021-.139-.051-.275-.08-.412-.009-.037-.014-.074-.022-.111a6.754 6.754 0 0 0-.119-.428c-.009-.027-.015-.055-.023-.082a6.578 6.578 0 0 0-.163-.439l-.021-.054a5.808 5.808 0 0 0-.219-.465l-.002-.005c-.814-1.545-2.285-2.651-4.316-2.651L13.925 0l-.028-.001c-.473 0-.9.076-1.293.193a4.737 4.737 0 0 0-2.275 1.492A5.946 5.946 0 0 0 9.5 2.868a5.908 5.908 0 0 0-.83-1.184A4.744 4.744 0 0 0 6.401.196 4.444 4.444 0 0 0 5.104.001l-.028.001-.027-.001C3.017.001 1.547 1.107.733 2.652l-.003.006a6.185 6.185 0 0 0-.22.465c-.006.017-.011.035-.019.053-.059.144-.115.29-.163.439-.009.027-.015.055-.023.082a6.146 6.146 0 0 0-.119.428c-.009.037-.015.074-.023.111-.03.136-.059.273-.08.412-.01.06-.014.122-.021.182A5.824 5.824 0 0 0 0 5.717c0 .159.012.319.033.48l.015.08c.021.139.046.278.082.418l.015.052c.037.149.082.297.135.447l.021.054c.05.136.104.272.165.408l.022.056.003-.003c1.189 2.603 4.307 5.255 6.549 6.923-.008.006-.016.016-.025.021 1.4 1.041 2.456 1.693 2.456 1.693l.028-.018.028.018s1.057-.652 2.456-1.693c-.009-.006-.017-.016-.024-.021 2.242-1.668 5.359-4.32 6.549-6.923l.003.003c.009-.019.015-.037.023-.056z"></path>
+                                    </svg>
+                                    <span>发起项目：<a href="/home/item/sendProject">{$r_num}</a></span>
+                                </div>
+                            </div>
+                            <!-- <div class="letter-notice">
+                                <div class="item">
+                                    <svg width="19px" height="13px" class="icon-letter" viewBox="0 0 19 13">
+                                        <path class="letter-color" fill-rule="evenodd" clip-rule="evenodd" fill="#DEDEDE" d="M.905-.001l8.578 5.897 8.613-5.897H.905z"></path>
+                                        <path class="letter-color" fill-rule="evenodd" clip-rule="evenodd" fill="#DEDEDE" d="M9.483 7.103L0 .603v12.398h19V.603l-9.517 6.5z"></path>
+                                    </svg>
+                                    <span>我的私信：<a href="messages">0</a></span>
+                                </div>
+                                <div class="item">
+                                    <svg width="19px" height="16px" viewBox="0 0 19 16.01">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" fill="#DEDEDE" d="M10.449.299L5.428 3.285v9.5l5.021 2.986c.95.542 1.765.135 1.765-.95V1.249c0-1.086-.815-1.629-1.765-.95zM0 5.32v5.429c0 1.086.949 2.036 2.035 2.036h2.036v-9.5H2.035C.949 3.285 0 4.235 0 5.32zm18.321 2.036h-2.715c-.407 0-.679.272-.679.679 0 .407.271.679.679.679h2.715c.407-.001.679-.272.679-.679 0-.407-.272-.679-.679-.679zm-.407 6.922l-2.308-1.357c-.271-.136-.679-.136-.95.271-.136.271-.136.679.271.95l2.308 1.356c.271.136.679.136.95-.271.136-.27.001-.813-.271-.949zM15.471 3.149l2.307-1.357c.272-.136.408-.543.272-.95-.136-.271-.543-.407-.814-.271l-2.308 1.357c-.271.135-.407.543-.271.95.136.271.542.407.814.271z"></path>
+                                    </svg>
+                                    <span>站内通知：<a href="notify">0</a></span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="locked-money-window" style="display: none">
+                        <form action="#" class="">
+                            <div class="form-group">
+                                <h3>锁定投资</h3>
+                            </div>
+                            <div class="form-group">
+                                <span>投资项目：</span>
+                                <span class="">
+                                    <select class="fly_xm project_id">
+                                        {foreach $nostart_project as $k=>$v}
+                                        <option value="{$v.id}">{$v.name}</option>
+                                        {/foreach}
+                                    </select>
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <span for="locked_money">我将锁定：</span>
+                                <input type="number" id="suoding_eth">
+                                <span class="">
+                                    <input type="text" value="ETH" disabled="" class="fly_ipt">
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <span for="locked_money">我将锁定：</span>
+                                <input type="number" id="suoding_btc">
+                                <span class="">
+                                    <input type="text" value="BTC" disabled="" class="fly_ipt">
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <span for="locked_money">我将锁定：</span>
+                                <input type="number" id="suoding_ltc">
+                                <span class="">
+                                    <input type="text" value="LTC" disabled="" class="fly_ipt">
+                                </span>
+                            </div>
+                            <div class="form-group locked-btn">
+                                <button type="button" class="btn" id="locked_project">确定</button>
+                                <button type="button" class="btn" id="locked_cancel">取消</button>
+                            </div>
+                            <div class="form-group">
+                                <p class="locked-footer">
+                                    说明：锁定投资适用于特定未开始项目，比如今天开始锁定明天的投资项目A，那么您的资金处于冻结状态，且一旦锁定资金将不能中途退回，项目A开始的时候会自动生成投资成功的订单。
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="my_project">
+                        <div class="project-header">
+                            <div class="nav-type">
+                                <a href="javascript:" class="project-tab active" data-tab="sup">我支持的项目</a><a href="javascript:" class="project-tab" data-tab="pro">我发起的项目</a>
+                            </div>
+                        </div>
+                        <div class="project-body content-sup">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>订单号</th>
+                                    <th>项目名称</th>
+                                    <th>支付金额</th>
+                                    <th class="text-center">支付方式</th>
+                                    <th class="text-center">代币数量</th>
+                                    <th class="text-center">时间</th>
+                                    <th class="text-center">状态</th>
+                                    <th class="text-center">操作</th>
+                                </tr>
+
+                                </thead>
+                                <tbody class="support-tbody">
+                                {if empty($project)}
+                                 <tr>
+                                    <td colspan="7" class="text-center hide-bottom">
+                                        <div class="empty-shared-box">
+                                            <span class="sprite-item carton"></span>
+                                            <span>您还未支持任何项目，<a href="/home/index/items" >立即浏览</a>好项目</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {else}
+                                      {volist name="project" id="vo"}
+                                        <tr>
+                                        <td class="text-center">{$vo.order_num}</td>
+                                        <td class="text-center">{$vo.project_name}</td>
+                                        <td class="text-center">{$vo.money}</td>
+                                        <td class="text-center">                               
+                                            {switch $vo.type}
+                                                {case 1}ETH{/case}
+                                                {case 2}BTC{/case}
+                                                {case 3}LTC{/case}
+                                            {/switch}
+                                        </td>
+                                        <td class="text-center">{$vo.re_coin}</td>
+                                        <td class="text-center">{$vo.created_at)|date('Y-m-d H:i:s',}</td>
+                                        <td class="text-center">
+                                            {$vo.status}
+                                               
+                                        </td>
+                                        
+                                        <td class="text-center"></td>
+                                        </tr>
+                                    {/volist}
+                                {/if}
+
+                                  
+                           
+                               
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="project-body content-pro">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>项目名称</th>
+                                    <th class="text-center">目标金额</th>
+                                    <th class="text-center">ICO天数</th>
+                                    <th class="text-center">创建时间</th>
+                                    <th>状态</th>
+                                    <th class="text-center">操作</th>
+                                </tr>
+                                </thead>
+                                <tbody class="project-tbody">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="recommend_project">
+                    <div class="recommend-header">
+                        <h3>ICO项目推荐：</h3>
+                        <a href="/home/index/items">查看更多
+                            <svg height="16px" width="16px" viewBox="0 0 19 9.477">
+                                <path class="arrow-down" fill-rule="evenodd" clip-rule="evenodd" fill="#272536" d="M1.92 0H0l9.522 9.477L19 0h-2.024L9.508 7.364 1.92 0z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    {foreach $projects as $v}
+                    <div class="li-item">
+                        <div class="block-top">
+                            <span class="status-tag">
+                                <svg width="70px" height="86px" class="ready" viewBox="64.5 -37.7 71.3 87.7">
+
+<path class="status-color" fill="#fff" d="M64.5 50l71.3-87.7H89.6L64.5-6.8z"></path></svg>
+                                <span class="ready-txt">{$v.status}</span>
+                            </span>
+                            <a href="/home/project/finish/id/{$v.id}" class="pro-pic"><img src="{$v.l_banner}" alt=""></a>
+                        </div>
+                        <div class="block-bottom">
+                            <h4><a href="show_info.html" class="pro-title">{$v.name}</a></h4>
+                            <div class="raise-funds">
+                                <div class="raise-money">
+                                    <a class="raise-already btc-font-family  ">ETH&nbsp;5,548</a>
+                                </div>
+                                <div class="raise-progress">
+                                    <div class="meter ">
+                                        <span class="current-percent  " data-number="27.74" style="width:27.74%"></span>
+                                    </div>
+                                    <a class="progress-percent " style="">27.74%</a>
+                                </div>
+                            </div>
+                            <div class="raise-funds">
+                                <div class="raise-money">
+                                    <a class="raise-already btc-font-family  ">BTC&nbsp;5,548</a>
+                                </div>
+                                <div class="raise-progress">
+                                    <div class="meter ">
+                                        <span class="current-percent  " data-number="27.74" style="width:27.74%"></span>
+                                    </div>
+                                    <a class="progress-percent " style="">27.74%</a>
+                                </div>
+                            </div>
+                            <div class="raise-funds">
+                                <div class="raise-money">
+                                    <a class="raise-already btc-font-family  ">LTC&nbsp;5,548</a>
+                                </div>
+                                <div class="raise-progress">
+                                    <div class="meter ">
+                                        <span class="current-percent  " data-number="27.74" style="width:27.74%"></span>
+                                    </div>
+                                    <a class="progress-percent " style="">27.74%</a>
+                                </div>
+                            </div>
+                            <ul class="raise-info clearfix">
+                                <li class="right-bar">
+                                    <a class="raise-info-val">20000.00 ETH</a>
+                                    <span>目标金额</span>
+                                </li>
+                                <li class="right-bar pl15">
+                                    <a class="raise-info-val">41</a>
+                                    <span>剩余天数</span>
+                                </li>
+                                <li class="pl15">
+                                    <a class="raise-info-val">477</a>
+                                    <span>支持者</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    {/foreach}
+                    <!-- <div class="li-item">
+                        <div class="block-top">
+                            <span class="status-tag">
+                                    <svg width="70px" height="86px" class="ready" viewBox="64.5 -37.7 71.3 87.7">
+
+<path class="status-color" fill="#fff" d="M64.5 50l71.3-87.7H89.6L64.5-6.8z"></path></svg>
+                                    <span class="ready-txt">即将开始</span>
+                            </span>
+                            <a href="show_info.html" class="pro-pic"><img src="__IMG__/1503423698191294016a.jpg" alt=""></a>
+                        </div>
+                        <div class="block-bottom">
+                            <h4><a href="show_info.html" class="pro-title">星云链(Nebulas)</a></h4>
+                            <div class="raise-funds">
+                                <div class="raise-money">
+                                    <a class="raise-already btc-font-family  ">ETH&nbsp;0</a>
+                                </div>
+                                <div class="raise-progress">
+                                    <div class="meter ">
+                                        <span class="current-percent  " data-number="0" style="width:0%"></span>
+                                    </div>
+                                    <a class="progress-percent " style="">0%</a>
+                                </div>
+                            </div>
+                            <ul class="raise-info clearfix">
+                                <li class="right-bar">
+                                    <a class="raise-info-val">50000.00 ETH</a>
+                                    <span>目标金额</span>
+                                </li>
+                                <li class="right-bar pl15">
+                                    <a class="raise-info-val">29</a>
+                                    <span>剩余天数</span>
+                                </li>
+                                <li class="pl15">
+                                    <a class="raise-info-val">0</a>
+                                    <span>支持者</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                    <!-- <div class="li-item">
+                        <div class="block-top">
+                            <span class="status-tag">
+                            </span>
+                            <a href="show_info.html" class="pro-pic"><img src="__IMG__/1503479781161982402.jpg" alt=""></a>
+                        </div>
+                        <div class="block-bottom">
+                            <h4><a href="show_info.html" class="pro-title">金融链Finchain</a></h4>
+                            <div class="raise-funds">
+                                <div class="raise-money">
+                                    <a class="raise-already btc-font-family  raise-completed ">฿&nbsp;2,800</a>
+                                </div>
+                                <div class="raise-progress">
+                                    <div class="meter ">
+                                        <span class="current-percent full-span raise-bg " data-number="100" style="width:100%"></span>
+                                    </div>
+                                    <a class="progress-percent  raise-completed" style="">100%</a>
+                                </div>
+                            </div>
+                            <ul class="raise-info clearfix">
+                                <li class="right-bar">
+                                    <a class="raise-info-val">2800.00 ฿</a>
+                                    <span>目标金额</span>
+                                </li>
+                                <li class="right-bar pl15">
+                                    <a class="raise-info-val">28</a>
+                                    <span>剩余天数</span>
+                                </li>
+                                <li class="pl15">
+                                    <a class="raise-info-val">0</a>
+                                    <span>支持者</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{include file='view/footer'}
+<div class="toolbar">
+    <a href="javascript:" id="back_to_top" title="返回顶部">
+        <svg height="30" width="30" viewBox="0 0 30 30">
+            <path d="M30 26c0 2.2-1.8 4-4 4H4c-2.2 0-4-1.8-4-4V4c0-2.2 1.8-4 4-4h22c2.2 0 4 1.8 4 4v22z" opacity=".3"></path>
+            <path fill="#FFF" d="M25.002 18.463l-1.134-1.134-1.321-1.321L15 8.461l-7.438 7.438-1.227 1.226-1.338 1.338c-.778.777-.868 1.96-.2 2.628s1.85.577 2.628-.2l2.172-2.172L15 13.317l2.691 2.691 3.496 3.496 1.387 1.387c.777.777 1.96.868 2.628.2s.577-1.851-.2-2.628z"></path>
+        </svg>
+    </a>
+</div>
+<!-- <script src="__JS__/vendor-140c67b313.bundle.js"></script> -->
+<!-- <script src="__JS__/app-d2b0299975.bundle.js"></script> -->
+<!-- <script src="__JS__/header-ee96b9a909.bundle.js"></script> -->
+<script src="__JS__/user-4fdf20982d.bundle.js"></script>
+</body>
+</html>
+<script>
+function judge(){
+     $.ajax({
+            url:'/home/user/judge',
+            success:function(res){
+                if(res.status!=1){
+                    alert(res.msg);
+                    location.href = res.data;
+                }
+            }
+        })
+}
+    $('#locked_project').on('click',function(){
+                    let project_id = $('.project_id').val();
+                    let suoding_eth = $('#suoding_eth').val()?$('#suoding_eth').val():0;
+                    let suoding_btc = $('#suoding_btc').val()?$('#suoding_btc').val():0;
+                    let suoding_ltc = $('#suoding_ltc').val()?$('#suoding_ltc').val():0;
+                    layer.prompt({title: '请输入您的安全密码！', formType: 1}, function(pass, index){
+                        $.ajax({
+                            url : '/home/login/investment_twopwd',
+                            type : 'post',
+                            data:{
+                                two_pwd:pass
+                            },
+                            success:function(req){
+                                if(req.code == 1){
+                                    layer.close(index);
+                                    $.ajax({
+                                        url : '/home/investment/suoding',
+                                        type : 'post',
+                                        data:{
+                                            id:project_id,
+                                            eth_acc:suoding_eth,
+                                            btc_acc:suoding_btc,
+                                            ltc_acc:suoding_ltc
+                                        },
+                                        success:function(res){
+                                            layer.msg(res.msg);
+                                            if(res.code == 3){
+                                                location.href="/home/user/index";
+                                            }else if(res.code == 1){
+                                                location.reload();
+                                            }
+                                        }
+                                    })
+                                }else{
+                                    layer.msg(req.msg);
+                                }
+                            }
+                        })
+                    });
+               
+       
+    })
+</script>
